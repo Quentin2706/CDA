@@ -1,0 +1,26 @@
+1 - Oui
+2 - Non
+3 - Oui
+4 - Oui
+5 - Oui
+6 - Non
+7 - Non
+8 - Non
+9 - Oui
+10 - Oui
+11 - Il n'y aurait qu'un laboratoire ou pas le laboratoire qui distrbuerait ce médicament.
+
+==============================================================
+Ex 2:
+
+Table chercheur => ilmanque année de naissance
+Dans la table chercheur la FK idOrga n'est pas spécifié 
+pas de FK directeur dans la table labo
+Mission dateArrivee pas date retour
+Pb avec la relation ternaire estMembre
+DateEmbauche a mettre dans estRattache et une relation 
+Pb cardinalité chercher et tutelle, 0-n 0-n
+manque attribut depuis dans a convention avec et cardinalite 1-n 1-n
+
+
+
