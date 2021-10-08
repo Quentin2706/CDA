@@ -1,8 +1,14 @@
 <?php
-$xml = simplexml_load_file("test.xml");
+echo'<form action="test.php" method="post">
+<input type="file" accept=".xml">
+<button type="submit">Génerer</button>
+</form>';
+var_dump($_POST);
+if (isset($_POST))
+{
+$xml = simplexml_load_file($_POST);
 $json = json_encode($xml);
 $myArray = json_decode($json, true);
-
 
 /*
 $myArray['Table'][$i]['Name'] => name = Nom de la table
@@ -103,3 +109,4 @@ for ($k = 0; $k < count($tableNameArr); $k++) {
 }
 
 fputs($SQLFile, $SQLSnippet);
+}
