@@ -2,9 +2,9 @@
 #             SCRIPT MYSQL
 #========================================
 
-DROP DATABASE IF EXISTS ddd;
-CREATE DATABASE ddd;
-USE ddd;
+DROP DATABASE IF EXISTS 5.1_Exercice_La_Poste;
+CREATE DATABASE 5.1_Exercice_La_Poste;
+USE 5.1_Exercice_La_Poste;
 
 #========================================
 # Table : Bureaux

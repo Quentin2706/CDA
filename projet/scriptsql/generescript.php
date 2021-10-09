@@ -1,12 +1,8 @@
 <?php
-echo'<form action="test.php" method="post">
-<input type="file" accept=".xml">
-<button type="submit">Génerer</button>
-</form>';
-var_dump($_POST);
-if (isset($_POST))
+
+if (isset($_POST['fichier']))
 {
-$xml = simplexml_load_file($_POST);
+$xml = simplexml_load_file($_POST['fichier']);
 $json = json_encode($xml);
 $myArray = json_decode($json, true);
 
@@ -63,7 +59,7 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
 
     if (strpos($myArray['Table'][$i]['PK']['Key'],",") != false)
     {
-        // Ici on met une nouvelle primary key quand c'est une tablea associative mais il faut quand même check apres si on nous envoie encore des INT AUTO_INCREMENT pourles tranformaer en INT
+        // Ici on met une nouvelle primary key quand c'est une table associative mais il faut quand même check apres si on nous envoie encore des INT AUTO_INCREMENT pourles tranformaer en INT
         $SQLSnippet .= "\t" . "id".$myArray['Table'][$i]['Name']." INT AUTO_INCREMENT PRIMARY KEY ,";
 
         if ($myArray['Table'][$i]['Column'][0]['Type'] == "INT AUTO_INCREMENT") {
@@ -88,7 +84,7 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
 
         // Quand un MLD fait mets un FK dans une table il le type en INT AUTO_INCREMENT sauf que c'est une FK on veut juste le typer en INT donc on verifie ici.
         if ($myArray['Table'][$i]['Column'][$g]['Type'] == "INT AUTO_INCREMENT") {
-            $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT ";
+            $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT NOT NULL";
         } else {
             $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " " . $myArray['Table'][$i]['Column'][$g]['Type'];
         }
@@ -109,4 +105,12 @@ for ($k = 0; $k < count($tableNameArr); $k++) {
 }
 
 fputs($SQLFile, $SQLSnippet);
+
+if (file_exists($fileName.'.sql'))
+{
+    echo'<h1>Le fichier a été généré avec succès.</h1>';
 }
+}
+
+
+header("Refresh:3; url=index.php");
