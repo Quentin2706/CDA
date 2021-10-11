@@ -1,7 +1,7 @@
 <?php
 /* Faire un fichier action et tout mettre dedans */
-echo'<form action="generescript.php" method="post">
+echo'<form action="generescript.php" method="post" enctype="multipart/form-data">
 <input name="fichier" type="file" accept=".xml">
-<button type="submit">Génerer</button>
+<input type="submit" value="Generer" />
 </form>';
 

@@ -2,9 +2,9 @@
 #             SCRIPT MYSQL
 #========================================
 
-DROP DATABASE IF EXISTS 5.1_Exercice_La_Poste;
-CREATE DATABASE 5.1_Exercice_La_Poste;
-USE 5.1_Exercice_La_Poste;
+DROP DATABASE IF EXISTS test DEFAULT CHARACTER SET utf8 ;
+CREATE DATABASE test;
+USE test;
 
 #========================================
 # Table : Bureaux
@@ -27,11 +27,11 @@ CREATE TABLE Types(
 #========================================
 CREATE TABLE Courriers(
 	idCourrier INT AUTO_INCREMENT PRIMARY KEY ,
-	rueDestinataire VARCHAR(150) NOT NULL ,
-	numDestintaire VARCHAR(5) NOT NULL ,
+	rueDestinataire VARCHAR(150)  NOT NULL ,
+	numDestintaire VARCHAR(5)  NOT NULL ,
 	rueEmetteur VARCHAR(150)  ,
 	numEmetteur VARCHAR(50)  ,
-	idType INT NOT NULLNOT NULL
+	idType INT  NOT NULL
 )ENGINE = InnoDB;
 
 #========================================
@@ -57,8 +57,8 @@ CREATE TABLE Centres_de_tri(
 CREATE TABLE Achemine(
 	idAchemine INT AUTO_INCREMENT PRIMARY KEY ,
 	idBureau INT  ,
-	idTransport INT NOT NULL ,
-	idCentresDeTri INT NOT NULL
+	idTransport INT  ,
+	idCentresDeTri INT 
 )ENGINE = InnoDB;
 
 #========================================
@@ -67,7 +67,7 @@ CREATE TABLE Achemine(
 CREATE TABLE Gere(
 	idGere INT AUTO_INCREMENT PRIMARY KEY ,
 	idBureau INT  ,
-	idCourrier INT NOT NULL ,
+	idCourrier INT  ,
 	dateEnvoi DATE ,
 	dateReception DATE
 )ENGINE = InnoDB;

@@ -1,8 +1,9 @@
 <?php
 
-if (isset($_POST['fichier']))
+
+if (isset($_FILES['fichier']))
 {
-$xml = simplexml_load_file($_POST['fichier']);
+$xml = simplexml_load_file($_FILES['fichier']['tmp_name']);
 $json = json_encode($xml);
 $myArray = json_decode($json, true);
 
@@ -16,19 +17,19 @@ $myArray['Table'][$i]['FK'][$i]['Key'] => le nom de la clé étrangère
 $myArray['Table'][$i]['FK'][$i]['Reference'] => nom de la références (c'est le truc qui a apres references en SQL)
  */
 
-$fileName = str_replace(" ", "_", $myArray['Name']);
+$fileName = str_replace(" ", "_", substr($_FILES['fichier']['name'], 0 ,strlen($_FILES['fichier']['name']) -4));
 $SQLFile = fopen($fileName . '.sql', 'w');
 
-$SQLSnippet = "#========================================\n"
+$SQLSnippet = 
+      "#========================================\n"
     . "#             SCRIPT MYSQL"
     . "\n#========================================\n"
-    . "\nDROP DATABASE IF EXISTS " . $fileName . ';'
+    . "\nDROP DATABASE IF EXISTS " . $fileName . ' DEFAULT CHARACTER SET utf8 ;'
     . "\nCREATE DATABASE " . $fileName . ';'
     . "\nUSE " . $fileName . ';';
 
 $tableNameArr = [];
 $tabFK = [];
-$cpt = 0;
 
 // On boucle sur les tables ..
 for ($i = 0; $i < count($myArray['Table']); $i++) {
@@ -47,11 +48,11 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
             $tableNameArr[] = $myArray['Table'][$i]['Name'];
             $tabFK[] = [$myArray['Table'][$i]['FK']['Key'], $myArray['Table'][$i]['FK']['Reference']];
         }
-        $cpt++;
     }
 
     // on affiche la table et ses attributs
-    $SQLSnippet .= "\n\n#========================================\n"
+    $SQLSnippet .= 
+          "\n\n#========================================\n"
         . "# Table : " . $myArray['Table'][$i]['Name']
         . "\n#========================================\n"
         . "CREATE TABLE " . $myArray['Table'][$i]['Name'] . "(\n";
@@ -84,12 +85,12 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
 
         // Quand un MLD fait mets un FK dans une table il le type en INT AUTO_INCREMENT sauf que c'est une FK on veut juste le typer en INT donc on verifie ici.
         if ($myArray['Table'][$i]['Column'][$g]['Type'] == "INT AUTO_INCREMENT") {
-            $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT NOT NULL";
+            $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT ";
         } else {
             $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " " . $myArray['Table'][$i]['Column'][$g]['Type'];
         }
         if (isset($myArray['Table'][$i]['Column'][$g]['Property'])) {
-            $SQLSnippet .= $myArray['Table'][$i]['Column'][$g]['Property'];
+            $SQLSnippet .= ' '.$myArray['Table'][$i]['Column'][$g]['Property'];
         }
     }
     $SQLSnippet .= "\n)ENGINE = InnoDB;";
@@ -111,6 +112,5 @@ if (file_exists($fileName.'.sql'))
     echo'<h1>Le fichier a été généré avec succès.</h1>';
 }
 }
-
 
 header("Refresh:3; url=index.php");
