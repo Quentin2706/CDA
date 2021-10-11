@@ -24,13 +24,13 @@ $SQLSnippet =
       "#========================================\n"
     . "#             SCRIPT MYSQL"
     . "\n#========================================\n"
-    . "\nDROP DATABASE IF EXISTS " . $fileName . ' DEFAULT CHARACTER SET utf8 ;'
-    . "\nCREATE DATABASE " . $fileName . ';'
+    . "\nDROP DATABASE IF EXISTS " . $fileName .';'
+    . "\nCREATE DATABASE " . $fileName . ' DEFAULT CHARACTER SET utf8;'
     . "\nUSE " . $fileName . ';';
 
 $tableNameArr = [];
 $tabFK = [];
-
+var_dump($myArray['Table'][1]);
 // On boucle sur les tables ..
 for ($i = 0; $i < count($myArray['Table']); $i++) {
     // on regarde si la table contient des Foreign Keys ..
@@ -71,6 +71,7 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
     }else {
     // Le premier attribut c'est forcément un id MAIS on verifie si celle ci est un int AUTO_INCREMENT sinon c'est un id Naturel d
     // A VOIR ICI SI C'EST UN ID NATUREL EST IL UNE PRIMARY KEY ?
+    
     if ($myArray['Table'][$i]['Column'][0]['Type'] == "INT AUTO_INCREMENT") {
         $SQLSnippet .= "\t" . $myArray['Table'][$i]['Column'][0]['Name'] . " " . $myArray['Table'][$i]['Column'][0]['Type'] . " PRIMARY KEY";
     } else {
@@ -80,14 +81,14 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
     for ($g = 1; $g < count($myArray['Table'][$i]['Column']); $g++) {
         
         if ($g < count($myArray['Table'][$i]['Column'])) {
-            $SQLSnippet .= " ,";
+            $SQLSnippet .= " ,\n";
         }
 
         // Quand un MLD fait mets un FK dans une table il le type en INT AUTO_INCREMENT sauf que c'est une FK on veut juste le typer en INT donc on verifie ici.
         if ($myArray['Table'][$i]['Column'][$g]['Type'] == "INT AUTO_INCREMENT") {
-            $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT ";
+            $SQLSnippet .= "\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT ";
         } else {
-            $SQLSnippet .= "\n\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " " . $myArray['Table'][$i]['Column'][$g]['Type'];
+            $SQLSnippet .= "\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " " . $myArray['Table'][$i]['Column'][$g]['Type'];
         }
         if (isset($myArray['Table'][$i]['Column'][$g]['Property'])) {
             $SQLSnippet .= ' '.$myArray['Table'][$i]['Column'][$g]['Property'];
@@ -113,4 +114,4 @@ if (file_exists($fileName.'.sql'))
 }
 }
 
-header("Refresh:3; url=index.php");
+// header("Refresh:3; url=index.php");

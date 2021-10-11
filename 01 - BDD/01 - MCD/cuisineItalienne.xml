@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Database>
+   <Name>cuisineItalienne</Name>
+   <Table>
+      <Name>Clients</Name>
+      <Column>
+         <Name>idClient</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>nomClient</Name>
+         <Type>VARCHAR(50) </Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>prenomClient</Name>
+         <Type>VARCHAR(50) </Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>DDN</Name>
+         <Type>DATE</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>courriel</Name>
+         <Type>VARCHAR(100) </Type>
+      </Column>
+      <Column>
+         <Name>telephone</Name>
+         <Type>VARCHAR(50) </Type>
+      </Column>
+      <PK>
+         <Key>idClient</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>TableCuisine</Name>
+      <Column>
+         <Name>numeroTable</Name>
+         <Type>INT</Type>
+      </Column>
+      <Column>
+         <Name>nbCouvert</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>type</Name>
+         <Type>VARCHAR(50) </Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>supplement</Name>
+         <Type>DOUBLE</Type>
+      </Column>
+      <PK>
+         <Key>numeroTable</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>Types</Name>
+      <Column>
+         <Name>idType</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>libelleType</Name>
+         <Type>VARCHAR(50) </Type>
+      </Column>
+      <PK>
+         <Key>idType</Key>
+      </PK>
+   </Table>
+   <Table>
+      <Name>Met</Name>
+      <Column>
+         <Name>idMet</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>nom</Name>
+         <Type>VARCHAR(50) </Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>prix</Name>
+         <Type>DOUBLE</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>idType</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>idMet</Key>
+      </PK>
+      <FK>
+         <Key>idType</Key>
+         <Reference>Types(idType)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>Tickets</Name>
+      <Column>
+         <Name>idTicket</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>numero</Name>
+         <Type>BIGINT</Type>
+         <Property>NOT NULL UNIQUE</Property>
+      </Column>
+      <Column>
+         <Name>dateTicket</Name>
+         <Type>DATETIME</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>nbCouvert</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>addition</Name>
+         <Type>DOUBLE</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>idClient</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <Column>
+         <Name>numeroTable</Name>
+         <Type>INT</Type>
+         <Property>NOT NULL</Property>
+      </Column>
+      <PK>
+         <Key>idTicket</Key>
+      </PK>
+      <AK>
+         <Key>numero</Key>
+      </AK>
+      <FK>
+         <Key>idClient</Key>
+         <Reference>Clients(idClient)</Reference>
+      </FK>
+      <FK>
+         <Key>numeroTable</Key>
+         <Reference>TableCuisine(numeroTable)</Reference>
+      </FK>
+   </Table>
+   <Table>
+      <Name>Commandes</Name>
+      <Column>
+         <Name>idTicket</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>idMet</Name>
+         <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <PK>
+         <Key>idTicket, idMet</Key>
+      </PK>
+      <FK>
+         <Key>idTicket</Key>
+         <Reference>Tickets(idTicket)</Reference>
+      </FK>
+      <FK>
+         <Key>idMet</Key>
+         <Reference>Met(idMet)</Reference>
+      </FK>
+   </Table>
+</Database>
