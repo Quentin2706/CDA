@@ -40,6 +40,10 @@
          <Name>idEditeur</Name>
          <Type>INT AUTO_INCREMENT</Type>
       </Column>
+      <Column>
+         <Name>nomEditeur</Name>
+         <Type>VARCHAR(50) </Type>
+      </Column>
       <PK>
          <Key>idEditeur</Key>
       </PK>
@@ -49,6 +53,10 @@
       <Column>
          <Name>idGenre</Name>
          <Type>INT AUTO_INCREMENT</Type>
+      </Column>
+      <Column>
+         <Name>libelleGenre</Name>
+         <Type>VARCHAR(50) </Type>
       </Column>
       <PK>
          <Key>idGenre</Key>

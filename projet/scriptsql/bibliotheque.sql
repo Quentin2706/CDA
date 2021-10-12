@@ -26,16 +26,16 @@ CREATE TABLE Catalogues(
 # Table : Editeurs
 #========================================
 CREATE TABLE Editeurs(
-	idEditeur  PRIMARY KEY ,
-	 
+	idEditeur INT AUTO_INCREMENT PRIMARY KEY ,
+	nomEditeur VARCHAR(50) 
 )ENGINE = InnoDB;
 
 #========================================
 # Table : Genres
 #========================================
 CREATE TABLE Genres(
-	idGenre  PRIMARY KEY ,
-	 
+	idGenre INT AUTO_INCREMENT PRIMARY KEY ,
+	libelleGenre VARCHAR(50) 
 )ENGINE = InnoDB;
 
 #========================================
@@ -100,7 +100,7 @@ CREATE TABLE acquisitions(
 CREATE TABLE Redactions(
 	idRedactions INT AUTO_INCREMENT PRIMARY KEY ,
 	idAuteur INT  ,
-	idLivre INT 
+	idLivre INT  NOT NULL 
 )ENGINE = InnoDB;
 
 #========================================
@@ -109,7 +109,7 @@ CREATE TABLE Redactions(
 CREATE TABLE editions(
 	ideditions INT AUTO_INCREMENT PRIMARY KEY ,
 	idLivre INT  ,
-	idEditeur INT 
+	idEditeur INT  NOT NULL 
 )ENGINE = InnoDB;
 
 #========================================
@@ -118,7 +118,7 @@ CREATE TABLE editions(
 CREATE TABLE LivresGenres(
 	idLivresGenres INT AUTO_INCREMENT PRIMARY KEY ,
 	idLivre INT  ,
-	idGenre INT 
+	idGenre INT  NOT NULL 
 )ENGINE = InnoDB;
 
 #========================================
@@ -136,7 +136,7 @@ CREATE TABLE Retours(
 #========================================
 CREATE TABLE Asso_8(
 	idAsso_8 INT AUTO_INCREMENT PRIMARY KEY ,	NumMatricule VARCHAR(50)  ,
-	idCategorieProfessionnelle INT 
+	idCategorieProfessionnelle INT  NOT NULL 
 )ENGINE = InnoDB;
 
 #========================================
@@ -145,7 +145,7 @@ CREATE TABLE Asso_8(
 CREATE TABLE recherches(
 	idrecherches INT AUTO_INCREMENT PRIMARY KEY ,
 	idLivre INT  ,
-	idMotsClés INT 
+	idMotsClés INT  NOT NULL 
 )ENGINE = InnoDB;
 
 ALTER TABLE Livres ADD CONSTRAINT FK_Livres_Usures FOREIGN KEY(idUsure) REFERENCES Usures(idUsure);

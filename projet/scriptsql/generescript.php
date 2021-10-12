@@ -30,7 +30,7 @@ $SQLSnippet =
 
 $tableNameArr = [];
 $tabFK = [];
-var_dump($myArray['Table'][1]);
+var_dump($myArray['Table'][9]);
 // On boucle sur les tables ..
 for ($i = 0; $i < count($myArray['Table']); $i++) {
     // on regarde si la table contient des Foreign Keys ..
@@ -84,15 +84,23 @@ for ($i = 0; $i < count($myArray['Table']); $i++) {
             $SQLSnippet .= " ,\n";
         }
 
+        // BIZARRE ICI PAS DE PROPERTY MAIS NE RENTRE PAS DANS LE ELSE POUR METTRE NOT NULL 
+        
         // Quand un MLD fait mets un FK dans une table il le type en INT AUTO_INCREMENT sauf que c'est une FK on veut juste le typer en INT donc on verifie ici.
         if ($myArray['Table'][$i]['Column'][$g]['Type'] == "INT AUTO_INCREMENT") {
             $SQLSnippet .= "\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " INT ";
+            if (isset($myArray['Table'][$i]['Column'][$g]['Property'])) {
+                $SQLSnippet .= ' '.$myArray['Table'][$i]['Column'][$g]['Property'];
+            } else {
+                $SQLSnippet .= ' NOT NULL ';
+            }
         } else {
-            $SQLSnippet .= "\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " " . $myArray['Table'][$i]['Column'][$g]['Type'];
-        }
-        if (isset($myArray['Table'][$i]['Column'][$g]['Property'])) {
+            $SQLSnippet .= "\t" . $myArray['Table'][$i]['Column'][$g]['Name'] . " " . $myArray['Table'][$i]['Column'][$g]['Type']; 
+            if (isset($myArray['Table'][$i]['Column'][$g]['Property'])) {
             $SQLSnippet .= ' '.$myArray['Table'][$i]['Column'][$g]['Property'];
+            }
         }
+       
     }
     $SQLSnippet .= "\n)ENGINE = InnoDB;";
 
