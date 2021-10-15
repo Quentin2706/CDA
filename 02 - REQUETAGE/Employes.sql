@@ -127,25 +127,25 @@ SELECT nom, titre, salaire FROM employe WHERE NOT nom = 'Fairent'AND (titre,sala
 SELECT nodep, dept.nom, employe.nom FROM employe RIGHT JOIN dept ON employe.nodep = dept.nodept ORDER BY nodep
 
 -- 12. Calculer le nombre d'employés de chaque titre.
-SELECT titre, COUNT(noemp) as "nombre d'employes" FROM employe GROUP BY titre
+SELECT titre, COUNT(*) as "nombre d'employes" FROM employe GROUP BY titre
 
 -- 13. Calculer la moyenne des salaires et leur somme, par région.Calculer la moyenne des salaires et leur somme, par région.
 SELECT ROUND(AVG(salaire),2) as "moy. Salaire",  ROUND(SUM(salaire),2) as "somme des salaires" FROM employe INNER JOIN dept ON employe.nodep = dept.nodept GROUP BY noregion
 
 -- 14. Afficher les numéros des départements ayant au moins 3 employés. 
-SELECT nodep FROM `employe` GROUP BY nodep HAVING count(nodep) > 2
+SELECT nodep FROM `employe` GROUP BY nodep HAVING count(*) > 2
 
 -- 15. Afficher les lettres qui sont l'initiale d'au moins trois employés. 
 SELECT UPPER(CONCAT(LEFT(prenom,1),'-', LEFT(nom,1))) as initiales FROM employe GROUP BY initiales HAVING count(initiales) > 2 
 
 -- 16. Rechercher le salaire maximum et le salaire minimum parmi tous les salariés et l'écart entre les deux. 
-SELECT MIN(SALAIRE) as 'salaire min' , MAX(salaire) as 'salaire max' , MAX(salaire)-MIN(SALAIRE) as 'diff' FROM employe
+SELECT MIN(salaire) as 'salaire min' , MAX(salaire) as 'salaire max' , MAX(salaire)-MIN(salaire) as 'difference' FROM employe
 
 -- 17. Rechercher le nombre de titres différents. 
 SELECT COUNT(DISTINCT(titre)) as "Nb titres differents" FROM employe
 
 -- 18. Pour chaque titre, compter le nombre d'employés possédant ce titre. 
-SELECT COUNT(noemp) as "nombre d'employes" FROM employe GROUP BY titre;
+SELECT titre, COUNT(*) as "nombre d'employes" FROM employe GROUP BY titre;
 
 -- 19. Pour chaque nom de département, afficher le nom du département et le nombre d'employés.
 SELECT dept.nom, count(noemp) as "Nombre employe par Departement" FROM dept LEFT JOIN employe ON dept.nodept = employe.nodep GROUP BY dept.nom
