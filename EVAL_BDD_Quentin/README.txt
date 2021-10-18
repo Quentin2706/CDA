@@ -1,0 +1,2 @@
+Je suppose que les enfants soit lié a plusieurs tournées dans le cas ou il sont livrés sur plusieurs noels c'est pour cela que je stock la date et l'heure dans la tournées afin 
+d'identifier les futures tournées applicativement.

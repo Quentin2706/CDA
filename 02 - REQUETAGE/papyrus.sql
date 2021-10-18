@@ -14,13 +14,13 @@ SELECT * FROM produit WHERE stkphy <= stkale AND qteann < 1000
 SELECT posfou, nomfou FROM fournis WHERE LEFT(posfou,2) in (75,78,92,77) 
 
 -- 6. Quelles sont les commandes passées au mois de mars et avril ?
-SELECT numfou FROM entcom WHERE SUBSTRING(datcom,6,2) in (03,04)
+SELECT numfou FROM entcom WHERE MONTH(datcom,6,2) in (3,4)
 
 -- 7. Quelles sont les commandes du jour qui ont des observations particulières ?(Affichage numéro de commande, date de commande)
 SELECT numcom, DATE(datcom) as date FROM entcom WHERE obscom <> "" AND DATE(NOW()) = DATE(datcom);
 
 -- 8. Lister le total de chaque commande par total décroissant (Affichage numéro de commande et total)
-SELECT ligcom.numcom, ligcom.qtecde*ligcom.priuni FROM ligcom INNER JOIN entcom ON ligcom.numcom = entcom.numcom GROUP BY numcom 
+SELECT fr.numcom, SUM(prixtotal) FROM (SELECT t.numcom, t.qtecde*t.priuni as prixtotal FROM ligcom  as t INNER JOIN entcom as f ON t.numcom = f.numcom) as fr GROUP BY numcom;
 
 -- 9. Lister les commandes dont le total est supérieur à 10 000€ ; on exclura dans le calcul du total les articles commandés en quantité supérieure ou égale à 1000.(Affichage numéro de commande et total)
 
