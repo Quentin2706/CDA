@@ -20,27 +20,37 @@ SELECT numfou FROM entcom WHERE MONTH(datcom,6,2) in (3,4)
 SELECT numcom, DATE(datcom) as date FROM entcom WHERE obscom <> "" AND DATE(NOW()) = DATE(datcom);
 
 -- 8. Lister le total de chaque commande par total décroissant (Affichage numéro de commande et total)
-SELECT fr.numcom, SUM(prixtotal) FROM (SELECT t.numcom, t.qtecde*t.priuni as prixtotal FROM ligcom  as t INNER JOIN entcom as f ON t.numcom = f.numcom) as fr GROUP BY numcom;
+SELECT numcom, SUM(qtecde*priuni) as 'prix total' FROM ligcom GROUP BY numcom ORDER BY DESC;
 
 -- 9. Lister les commandes dont le total est supérieur à 10 000€ ; on exclura dans le calcul du total les articles commandés en quantité supérieure ou égale à 1000.(Affichage numéro de commande et total)
+SELECT numcom, SUM(qtecde*priuni) as 'prix total' FROM ligcom WHERE qtecde < 1000 GROUP BY numcom  HAVING SUM(qtecde*priuni) > 10000;
 
 -- 10.Lister les commandes par nom fournisseur (Afficher le nom du fournisseur, le numéro de commande et la date)
+SELECT nomfou, numcom, datcom FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou  
 
 -- 11.Sortir les produits des commandes ayant le mot "urgent" en observation?(Afficher le numéro de commande, le nom du fournisseur, le libellé du produit et le sous total = quantité commandée * Prix unitaire) 
+SELECT numcom, numfou, libart, qtecde*priuni  FROM entcom INNER JOIN ligcom ON entcom.numfou = ligcom.numfou  
 
 -- 12.Coder de 2 manières différentes la requête suivante :Lister le nom des fournisseurs susceptibles de livrer au moins un article
 
+
 -- 13.Coder de 2 manières différentes la requête suivanteLister les commandes (Numéro et date) dont le fournisseur est celui de la commande 70210 :
+
 
 -- 14.Dans les articles susceptibles d’être vendus, lister les articles moins chers (basés sur Prix1) que le moins cher des rubans (article dont le premier caractère commence par R). On affichera le libellé de l’article et prix1
 
+
 -- 15.Editer la liste des fournisseurs susceptibles de livrer les produits dont le stock est inférieur ou égal à 150 % du stock d'alerte. La liste est triée par produit puis fournisseur
+
 
 -- 16.Éditer la liste des fournisseurs susceptibles de livrer les produit dont le stock est inférieur ou égal à 150 % du stock d'alerte et un délai de livraison d'au plus 30 jours. La liste est triée par fournisseur puis produit
 
+
 -- 17.Avec le même type de sélection que ci-dessus, sortir un total des stocks par fournisseur trié par total décroissant
 
+
 -- 18.En fin d'année, sortir la liste des produits dont la quantité réellement commandée dépasse 90% de la quantité annuelle prévue.
+
 
 -- 19.Calculer le chiffre d'affaire par fournisseur pour l'année 93 sachant que les prix indiqués sont hors taxes et que le taux de TVA est 20%.
 
