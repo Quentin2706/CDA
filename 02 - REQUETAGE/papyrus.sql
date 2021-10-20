@@ -29,13 +29,15 @@ SELECT numcom, SUM(qtecde*priuni) as 'prix total' FROM ligcom WHERE qtecde < 100
 SELECT nomfou, numcom, datcom FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou  
 
 -- 11.Sortir les produits des commandes ayant le mot "urgent" en observation?(Afficher le numéro de commande, le nom du fournisseur, le libellé du produit et le sous total = quantité commandée * Prix unitaire) 
-SELECT numcom, numfou, libart, qtecde*priuni  FROM entcom INNER JOIN ligcom ON entcom.numfou = ligcom.numfou  
+SELECT entcom.numcom, entcom.numfou, produit.libart, qtecde*priuni as total FROM entcom INNER JOIN ligcom ON entcom.numcom = ligcom.numcom INNER JOIN produit ON ligcom.codart = produit.codart WHERE obscom LIKE '%urgent%'
 
 -- 12.Coder de 2 manières différentes la requête suivante :Lister le nom des fournisseurs susceptibles de livrer au moins un article
+SELECT fournis.numfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy > 0 GROUP BY fournis.numfou
+SELECT numfou FROM (SELECT fournis.numfou, stkphy as stock FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart) as e WHERE stock > 0 GROUP BY numfou
 
 
--- 13.Coder de 2 manières différentes la requête suivanteLister les commandes (Numéro et date) dont le fournisseur est celui de la commande 70210 :
-
+-- 13.Coder de 2 manières différentes la requête suivante Lister les commandes (Numéro et date) dont le fournisseur est celui de la commande 70210 :
+SELECT nomfou, numcom, datcom FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou WHERE nomfou = (SELECT nomfou FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou WHERE numcom = '70210');
 
 -- 14.Dans les articles susceptibles d’être vendus, lister les articles moins chers (basés sur Prix1) que le moins cher des rubans (article dont le premier caractère commence par R). On affichera le libellé de l’article et prix1
 
