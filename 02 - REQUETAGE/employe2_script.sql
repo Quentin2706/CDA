@@ -13,7 +13,6 @@ CREATE TABLE departement(
 )ENGINE = InnoDB;
 
 
-
 #========================================
 # Table : employe
 #========================================
@@ -22,11 +21,11 @@ CREATE TABLE employe(
    noemp INT AUTO_INCREMENT PRIMARY KEY,
    nomemp VARCHAR(100) ,
    fonction VARCHAR(50) ,
+   noresp INT,
    datemb DATE,
    sala DECIMAL(19,4),
    comm DECIMAL(19,4),
-   nodep INT NOT NULL,
-   noemp_1 INT
+   nodep INT NOT NULL
    
 )ENGINE = InnoDB;
 
@@ -55,5 +54,4 @@ CREATE TABLE histofonction(
 )ENGINE = InnoDB;
 
 ALTER TABLE employe ADD CONSTRAINT FK_Employe_Departement FOREIGN KEY(nodep) REFERENCES departement(nodep),
-                    ADD CONSTRAINT FK_Employe_Employe FOREIGN KEY(noemp_1) REFERENCES employe(noemp);
-                    
+                    ADD CONSTRAINT FK_Employe_Employe FOREIGN KEY(noresp) REFERENCES employe(noemp);

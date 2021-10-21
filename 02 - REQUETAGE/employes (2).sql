@@ -1,16 +1,15 @@
-
-A.	Requêtes simples
-
 1.	Afficher les noms de département
 SELECT nomdep FROM departement
 
-
 2.	Afficher les numéros et noms de département
 SELECT nodep, nomdep FROM departement
+
 3.	Afficher toutes les propriétés des employés
 SELECT * FROM employe
+
 4.	Afficher les fonctions des employés
 SELECT fonction FROM employe
+
 5.	Afficher les fonctions des employés sans double
 SELECT DISTINCT fonction FROM employe
 

@@ -11,28 +11,28 @@ SELECT count(*) as "nombre de commandes passées", count(DISTINCT(fournis.numfou
 SELECT * FROM produit WHERE stkphy <= stkale AND qteann < 1000 
 
 -- 5. Quels sont les fournisseurs situés dans les départements 75 78 92 77 ? L’affichage (département, nom fournisseur) sera effectué par département décroissant, puis par ordre alphabétique
-SELECT posfou, nomfou FROM fournis WHERE LEFT(posfou,2) in (75,78,92,77) 
+SELECT posfou, nomfou FROM fournis WHERE LEFT(posfou,2) in (75,78,92,77) ORDER BY LEFT(posfou,2) DESC, nomfou
 
 -- 6. Quelles sont les commandes passées au mois de mars et avril ?
-SELECT numfou FROM entcom WHERE MONTH(datcom,6,2) in (3,4)
+SELECT numfou FROM entcom WHERE MONTH(datcom) in (3,4)
 
 -- 7. Quelles sont les commandes du jour qui ont des observations particulières ?(Affichage numéro de commande, date de commande)
 SELECT numcom, DATE(datcom) as date FROM entcom WHERE obscom <> "" AND DATE(NOW()) = DATE(datcom);
 
 -- 8. Lister le total de chaque commande par total décroissant (Affichage numéro de commande et total)
-SELECT numcom, SUM(qtecde*priuni) as 'prix total' FROM ligcom GROUP BY numcom ORDER BY DESC;
+SELECT numcom, SUM(qtecde*priuni) as 'prix total' FROM ligcom GROUP BY numcom ORDER BY 'prix total' DESC;
 
 -- 9. Lister les commandes dont le total est supérieur à 10 000€ ; on exclura dans le calcul du total les articles commandés en quantité supérieure ou égale à 1000.(Affichage numéro de commande et total)
 SELECT numcom, SUM(qtecde*priuni) as 'prix total' FROM ligcom WHERE qtecde < 1000 GROUP BY numcom  HAVING SUM(qtecde*priuni) > 10000;
 
 -- 10.Lister les commandes par nom fournisseur (Afficher le nom du fournisseur, le numéro de commande et la date)
-SELECT nomfou, numcom, datcom FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou  
+SELECT nomfou, numcom, datcom FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou
 
 -- 11.Sortir les produits des commandes ayant le mot "urgent" en observation?(Afficher le numéro de commande, le nom du fournisseur, le libellé du produit et le sous total = quantité commandée * Prix unitaire) 
 SELECT entcom.numcom, entcom.numfou, produit.libart, qtecde*priuni as total FROM entcom INNER JOIN ligcom ON entcom.numcom = ligcom.numcom INNER JOIN produit ON ligcom.codart = produit.codart WHERE obscom LIKE '%urgent%'
 
 -- 12.Coder de 2 manières différentes la requête suivante :Lister le nom des fournisseurs susceptibles de livrer au moins un article
-SELECT fournis.numfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy > 0 GROUP BY fournis.numfou
+SELECT fournis.nomfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy > 0 GROUP BY fournis.numfou
 
 SELECT numfou FROM (SELECT fournis.numfou, stkphy as stock FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart) as e WHERE stock > 0 GROUP BY numfou
 
@@ -41,15 +41,15 @@ SELECT numfou FROM (SELECT fournis.numfou, stkphy as stock FROM fournis INNER JO
 SELECT nomfou, numcom, datcom FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou WHERE nomfou = (SELECT nomfou FROM entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou WHERE numcom = '70210');
 
 -- 14.Dans les articles susceptibles d’être vendus, lister les articles moins chers (basés sur Prix1) que le moins cher des rubans (article dont le premier caractère commence par R). On affichera le libellé de l’article et prix1
-SELECT libart, prix1 FROM vente INNER JOIN produit ON vente.codart = produit.codart WHERE prix1 <  (SELECT MIN(prix1) FROM produit INNER JOIN vente ON produit.codart = vente.codart WHERE produit.codart LIKE 'R%' )
+SELECT libart, prix1 FROM vente INNER JOIN produit ON vente.codart = produit.codart WHERE prix1 <  (SELECT MIN(prix1) FROM vente WHERE vente.codart LIKE 'R%' )
 
 -- 15.Editer la liste des fournisseurs susceptibles de livrer les produits dont le stock est inférieur ou égal à 150 % du stock d'alerte. La liste est triée par produit puis fournisseur
 
-SELECT libart, nomfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy <= stkale*1.5 GROUP BY fournis.numfou ORDER BY produit.codart, fournis.numfou
+SELECT libart, nomfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy <= stkale*1.5 ORDER BY produit.codart, fournis.nomfou
 
 
 -- 16.Éditer la liste des fournisseurs susceptibles de livrer les produit dont le stock est inférieur ou égal à 150 % du stock d'alerte et un délai de livraison d'au plus 30 jours. La liste est triée par fournisseur puis produit
-SELECT libart, nomfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy <= stkale*1.5 AND delliv <= 30 GROUP BY fournis.numfou ORDER BY produit.codart, fournis.numfou
+SELECT libart, nomfou FROM fournis INNER JOIN vente ON fournis.numfou = vente.numfou INNER JOIN produit ON vente.codart = produit.codart WHERE stkphy <= stkale*1.5 AND delliv <= 30 ORDER BY produit.codart, fournis.numfou
 
 
 -- 17.Avec le même type de sélection que ci-dessus, sortir un total des stocks par fournisseur trié par total décroissant
