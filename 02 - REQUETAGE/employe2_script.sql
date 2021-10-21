@@ -48,7 +48,7 @@ CREATE TABLE grade(
 #========================================
 
 CREATE TABLE histofonction(
-   noemp INT PRIMARY KEY,
+   noemp INT,
    date_nom DATE,
    fonction VARCHAR(50) 
 )ENGINE = InnoDB;

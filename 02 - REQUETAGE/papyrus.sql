@@ -58,11 +58,11 @@ SELECT libart, nomfou, SUM(stkphy) as total FROM fournis INNER JOIN vente ON fou
 
 
 -- 18.En fin d'année, sortir la liste des produits dont la quantité réellement commandée dépasse 90% de la quantité annuelle prévue.
-SELECT codart FROM ligcom INNER JOIN produit ON ligcom.codart = produit.codart WHERE qtecde*90/100 > qteann
+SELECT codart FROM ligcom INNER JOIN produit ON ligcom.codart = produit.codart WHERE qtecde > qteann*0.90
 
 
 -- 19.Calculer le chiffre d'affaire par fournisseur pour l'année 93 sachant que les prix indiqués sont hors taxes et que le taux de TVA est 20%.
-SELECT entcom.numcom, ROUND(SUM(qtecde*priuni)*1.2,2) as 'prix total' FROM ligcom INNER JOIN entcom ON ligcom.numcom = entcom.numcom WHERE YEAR(datcom) = 1993 GROUP BY numfou ; 
+SELECT entcom.numcom, ROUND(SUM(qtecde*priuni)*1.2,2) as 'prix total' FROM ligcom INNER JOIN entcom ON ligcom.numcom = entcom.numcom WHERE YEAR(datcom) = "1993" GROUP BY numfou ; 
 
 -- /*
 -- 20.Existe-t-il des lignes de commande non cohérentes avec les produits vendus par 
@@ -78,12 +78,12 @@ UPDATE vente SET prix1= prix1*1.04 , prix2= prix1*1.02 WHERE numfou = 9180
 UPDATE vente SET prix2= prix1 WHERE prix2 = 0 
 
 3. Mettre à jour le champ obscom en positionnant ***** pour toutes les commandes dont le fournisseur a un indice de satisfaction <5
-UPDATE entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou SET  obscom = '*****'  WHERE satisf < 5
+-- UPDATE entcom INNER JOIN fournis ON entcom.numfou = fournis.numfou SET  obscom = '*****'  WHERE satisf < 5
 UPDATE entcom SET  obscom = '*****'  WHERE numfou in (SELECT numfou FROM fournis WHERE satisf < 5 )
 
 
 4. Suppression du produit I110
-DELETE FROM produit WHERE codart = 'I110';
+    DELETE FROM produit WHERE codart = 'I110';
 
 5. Suppression des entête de commande qui n'ont aucune ligne
 DELETE FROM entcom WHERE numcom not in (SELECT DISTINCT numcom FROM ligcom);
