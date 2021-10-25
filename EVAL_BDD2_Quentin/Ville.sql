@@ -39,26 +39,30 @@ SELECT ville_nom, ROUND(SUM(ville_surface),2) as "ville_surface" FROM villes_fra
 ALTER TABLE regions ADD region_nbDepartement INT
 
 14.	Ecrire une procédure stockée (nommée MajRegion), qui vient mettre à jour cette colonne
--- je suis pas loin d'avoir trouvé
+-- j'aurai pu utiliser DECLARE mavar type; Mais j'ai trouvé aussi la méthode @mavar:=value
 DELIMITER $$
 CREATE PROCEDURE MajRegion()
 BEGIN
-DECLARE @minimum int;
-DECLARE @maximum int;
-DECLARE @X int;
-SELECT @minimum=min(region_id), @maximum=max(region_id) FROM regions;
 
-SET @X=@minimum ;
-WHILE (@x <= @maximum)
-SELECT @nbDept=COUNT(*) FROM departements INNER JOIN regions ON departements.departement_regionId = regions.region_id WHERE region_id=@X;
-UPDATE regions SET region_nbDepartement=@nbDept WHERE region_id=@X;
-END WHILE,
+SELECT @minimum:=min(region_id), @maximum:=max(region_id) FROM regions;
+
+SET @x = @minimum ;
+
+WHILE (@x <= @maximum) DO
+
+    SELECT @nbDept:=COUNT(*), @rid:=region_id FROM departements INNER JOIN regions ON departements.departement_regionId = regions.region_id GROUP BY region_id HAVING region_id= @x ;
+    UPDATE regions SET region_nbDepartement=@nbDept WHERE region_id=@rid;
+    SET @x = @x+1;
+END WHILE;
+
 END$$
+
 DELIMITER ;
+
 
 15.	Créer une vue qui regroupe les 3 tables
 
-CREATE VIEW 'regions_depts_villes' AS 
+CREATE VIEW regionsdeptsvilles AS 
 SELECT 
     r.region_id,
     r.region_nom,
@@ -70,7 +74,6 @@ SELECT
     d.departement_slug,
     d.departement_nom_soundex,
     v.ville_id,
-    v.ville_departement,
     v.ville_slug,
     v.ville_nom,
     v.ville_nom_simple,
@@ -96,14 +99,8 @@ SELECT
     v.ville_latitude_dms,
     v.ville_zmin,
     v.ville_zmax
-FROM table
+FROM regions as r
+INNER JOIN departements as d ON r.region_id = d.departement_regionId
+INNER JOIN villes_france as v ON d.departement_code = v.ville_departement;
 
-INNER JOIN table ON cle=cle
 
-WHERE condition
-
-GROUP BY colonne
-
-HAVING condition
-
-ORDER BY colonne ;
