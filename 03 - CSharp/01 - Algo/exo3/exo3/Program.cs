@@ -176,7 +176,6 @@ namespace exo3
 
             //10.
 
-
             Console.WriteLine("Saisissez le pion a bouger : ");
             string value = Console.ReadLine();
 
@@ -256,21 +255,16 @@ namespace exo3
                         Console.WriteLine("T'as pas le droit de bouger");
                     }
                 default:
+                    { 
                     Console.WriteLine("Saisie incorrecte");
                     break;
+                    }
             }
 
+            // 11.
+            Console.Write("Ecrivez l'heure format 'HH:MM' : ");
 
 
-            
-
-
-
-
-           
-
-
-          
 
 
         }
