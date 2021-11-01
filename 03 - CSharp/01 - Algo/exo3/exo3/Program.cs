@@ -176,93 +176,123 @@ namespace exo3
 
             //10.
 
-            Console.WriteLine("Saisissez le pion a bouger : ");
-            string value = Console.ReadLine();
+            /*         Console.WriteLine("Saisissez le pion a bouger : ");
+                     string value = Console.ReadLine();
 
 
-            Console.WriteLine("Saisissez les coordonnées I et J le fou : ");
+                     Console.WriteLine("Saisissez les coordonnées I et J le fou : ");
 
-            int i = Convert.ToInt32(Console.ReadLine());
-            int j = Convert.ToInt32(Console.ReadLine());
+                     int i = Convert.ToInt32(Console.ReadLine());
+                     int j = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Saisissez les coordonnées I et J du futur déplacement de votre cavalier : ");
+                     Console.WriteLine("Saisissez les coordonnées I et J du futur déplacement de votre cavalier : ");
 
-            int i2 = Convert.ToInt32(Console.ReadLine());
-            int j2 = Convert.ToInt32(Console.ReadLine());
+                     int i2 = Convert.ToInt32(Console.ReadLine());
+                     int j2 = Convert.ToInt32(Console.ReadLine());
 
 
-            switch (value)
+                     switch (value)
+                     {
+                         case "0":
+
+                             // le cavalier
+                             if ((i2 == i + 2 && j2 == j + 1) || (i2 == i + 2 && j2 == j - 1) || (i2 == i - 2 && j2 == j + 1) || (i2 == i - 2 && j2 == j - 1) || (j2 == j - 2 && i2 == i - 1) || (j2 == j - 2 && i2 == i + 1) || (j2 == j + 2 && i2 == i - 1) || (j2 == j + 2 && i2 == i + 1))
+                             {
+                                 Console.WriteLine("T'as le droit de bouger");
+                             }
+                             else
+                             {
+                                 Console.WriteLine("T'as pas le droit de bouger");
+                             }
+                             break;
+
+                         case "1":
+
+                             // la tour
+                             if (i != i2 && j == j2 || i == i2 && j != j2)
+                             {
+                                 Console.WriteLine("T'as le droit de bouger");
+                             }
+                             else
+                             {
+                                 Console.WriteLine("T'as pas le droit de bouger");
+                             }
+                             break;
+
+                         case "2":
+                             // le fou
+
+                             if (Math.Abs(i - i2) == Math.Abs(j - j2))
+                             {
+                                 Console.WriteLine("T'as le droit de bouger");
+                             }
+                             else
+                             {
+                                 Console.WriteLine("T'as pas le droit de bouger");
+                             }
+                             break;
+
+                         case "3":
+                             // la dame 
+                             if ((i != i2 && j == j2 || i == i2 && j != j2) || Math.Abs(i - i2) == Math.Abs(j - j2))
+                             {
+                                 Console.WriteLine("T'as le droit de bouger");
+                             }
+                             else
+                             {
+                                 Console.WriteLine("T'as pas le droit de bouger");
+                             }
+                             break;
+
+                         case "4":
+                             // Le roi
+                             if ((i == i2 - 1 && j == j2 - 1) || (i == i2 + 1 && j == j2 + 1) || (i == i2 - 1 && j == j2 + 1) || (i == i2 + 1 && j == j2 - 1) || (i == i2 - 1 && j == j2 - 1) || (i == i2 && j == j2 + 1) || (i == i2 && j == j2 - 1) || (i == i2 - 1 && j == j2) || (i == i2 + 1 && j == j2))
+                             {
+                                 Console.WriteLine("T'as le droit de bouger");
+                             }
+                             else
+                             {
+                                 Console.WriteLine("T'as pas le droit de bouger");
+                             }
+                         default:
+                             { 
+                             Console.WriteLine("Saisie incorrecte");
+                             break;
+                             }
+                     }
+
+                     // 11.
+                     Console.Write("Ecrivez l'heure format 'HH:MM' : ");
+         */
+
+
+            string xHautGauche, yHautGauche, xBasDroite, yBasDroite;
+            int xGauche,yHaut, xDroite, yBas;
+
+            Console.Write("Entrez la valeur de xHautGauche : ");
+            xHautGauche = Console.ReadLine();
+
+            Console.Write("Entrez la valeur de yHautGauche : ");
+            yHautGauche = Console.ReadLine();
+
+            Console.Write("Entrez la valeur de xBasDroite : ");
+            xBasDroite = Console.ReadLine();
+
+            Console.Write("Entrez la valeur de yBasDroite : ");
+            yBasDroite = Console.ReadLine();
+
+            if (int.TryParse(xHautGauche, out xGauche) && int.TryParse(yHautGauche, out yHaut) && int.TryParse(xBasDroite, out xDroite) && int.TryParse(yBasDroite, out yBas))
             {
-                case "0":
-            
-                    // le cavalier
-                    if ((i2 == i + 2 && j2 == j + 1) || (i2 == i + 2 && j2 == j - 1) || (i2 == i - 2 && j2 == j + 1) || (i2 == i - 2 && j2 == j - 1) || (j2 == j - 2 && i2 == i - 1) || (j2 == j - 2 && i2 == i + 1) || (j2 == j + 2 && i2 == i - 1) || (j2 == j + 2 && i2 == i + 1))
-                    {
-                        Console.WriteLine("T'as le droit de bouger");
-                    }
-                    else
-                    {
-                        Console.WriteLine("T'as pas le droit de bouger");
-                    }
-                    break;
-
-                case "1":
-
-                    // la tour
-                    if (i != i2 && j == j2 || i == i2 && j != j2)
-                    {
-                        Console.WriteLine("T'as le droit de bouger");
-                    }
-                    else
-                    {
-                        Console.WriteLine("T'as pas le droit de bouger");
-                    }
-                    break;
-
-                case "2":
-                    // le fou
-
-                    if (Math.Abs(i - i2) == Math.Abs(j - j2))
-                    {
-                        Console.WriteLine("T'as le droit de bouger");
-                    }
-                    else
-                    {
-                        Console.WriteLine("T'as pas le droit de bouger");
-                    }
-                    break;
-
-                case "3":
-                    // la dame 
-                    if ((i != i2 && j == j2 || i == i2 && j != j2) || Math.Abs(i - i2) == Math.Abs(j - j2))
-                    {
-                        Console.WriteLine("T'as le droit de bouger");
-                    }
-                    else
-                    {
-                        Console.WriteLine("T'as pas le droit de bouger");
-                    }
-                    break;
-
-                case "4":
-                    // Le roi
-                    if ((i == i2 - 1 && j == j2 - 1) || (i == i2 + 1 && j == j2 + 1) || (i == i2 - 1 && j == j2 + 1) || (i == i2 + 1 && j == j2 - 1) || (i == i2 - 1 && j == j2 - 1) || (i == i2 && j == j2 + 1) || (i == i2 && j == j2 - 1) || (i == i2 - 1 && j == j2) || (i == i2 + 1 && j == j2))
-                    {
-                        Console.WriteLine("T'as le droit de bouger");
-                    }
-                    else
-                    {
-                        Console.WriteLine("T'as pas le droit de bouger");
-                    }
-                default:
-                    { 
-                    Console.WriteLine("Saisie incorrecte");
-                    break;
-                    }
+                if (xDroite > xGauche && yHaut > yBas)
+                {
+                    Console.WriteLine(" Le rectangle est correct.");
+                } else
+                {
+                    Console.WriteLine(" Le rectangle est incorrect.");
+                }
             }
 
-            // 11.
-            Console.Write("Ecrivez l'heure format 'HH:MM' : ");
+
 
 
 

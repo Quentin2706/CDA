@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\01 - Algo\\exo3\\exo3\\exo3.csproj",
-      "projectName": "exo3",
-      "projectPath": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\01 - Algo\\exo3\\exo3\\exo3.csproj",
+      "projectUniqueName": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\01 - Algo\\exo4\\exo4\\exo4.csproj",
+      "projectName": "exo4",
+      "projectPath": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\01 - Algo\\exo4\\exo4\\exo4.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\01 - Algo\\exo3\\exo3\\obj\\",
+      "outputPath": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\01 - Algo\\exo4\\exo4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
