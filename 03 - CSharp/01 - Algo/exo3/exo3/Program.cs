@@ -176,6 +176,182 @@ namespace exo3
 
             //10.
 
+<<<<<<< HEAD
+            //Console.WriteLine("Saisissez le pion a bouger : ");
+            //string value = Console.ReadLine();
+
+
+            //Console.WriteLine("Saisissez les coordonnées I et J le fou : ");
+
+            //int i = Convert.ToInt32(Console.ReadLine());
+            //int j = Convert.ToInt32(Console.ReadLine());
+
+            //Console.WriteLine("Saisissez les coordonnées I et J du futur déplacement de votre cavalier : ");
+
+            //int i2 = Convert.ToInt32(Console.ReadLine());
+            //int j2 = Convert.ToInt32(Console.ReadLine());
+
+
+            //switch (value)
+            //{
+            //    case "0":
+            
+            //        // le cavalier
+            //        if ((i2 == i + 2 && j2 == j + 1) || (i2 == i + 2 && j2 == j - 1) || (i2 == i - 2 && j2 == j + 1) || (i2 == i - 2 && j2 == j - 1) || (j2 == j - 2 && i2 == i - 1) || (j2 == j - 2 && i2 == i + 1) || (j2 == j + 2 && i2 == i - 1) || (j2 == j + 2 && i2 == i + 1))
+            //        {
+            //            Console.WriteLine("T'as le droit de bouger");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("T'as pas le droit de bouger");
+            //        }
+            //        break;
+
+            //    case "1":
+
+            //        // la tour
+            //        if (i != i2 && j == j2 || i == i2 && j != j2)
+            //        {
+            //            Console.WriteLine("T'as le droit de bouger");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("T'as pas le droit de bouger");
+            //        }
+            //        break;
+
+            //    case "2":
+            //        // le fou
+
+            //        if (Math.Abs(i - i2) == Math.Abs(j - j2))
+            //        {
+            //            Console.WriteLine("T'as le droit de bouger");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("T'as pas le droit de bouger");
+            //        }
+            //        break;
+
+            //    case "3":
+            //        // la dame 
+            //        if ((i != i2 && j == j2 || i == i2 && j != j2) || Math.Abs(i - i2) == Math.Abs(j - j2))
+            //        {
+            //            Console.WriteLine("T'as le droit de bouger");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("T'as pas le droit de bouger");
+            //        }
+            //        break;
+
+            //    case "4":
+            //        // Le roi
+            //        if ((i == i2 - 1 && j == j2 - 1) || (i == i2 + 1 && j == j2 + 1) || (i == i2 - 1 && j == j2 + 1) || (i == i2 + 1 && j == j2 - 1) || (i == i2 - 1 && j == j2 - 1) || (i == i2 && j == j2 + 1) || (i == i2 && j == j2 - 1) || (i == i2 - 1 && j == j2) || (i == i2 + 1 && j == j2))
+            //        {
+            //            Console.WriteLine("T'as le droit de bouger");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("T'as pas le droit de bouger");
+            //        }
+            //    default:
+            //        { 
+            //        Console.WriteLine("Saisie incorrecte");
+            //        break;
+            //        }
+            //}
+
+            // 11.
+            //Console.Write("Ecrivez l'heure de départ : ");
+            //string departH = Console.ReadLine();
+
+            //Console.Write("Ecrivez les minutes de départ : ");
+            //string departM = Console.ReadLine();
+
+            //Console.Write("Ecrivez l'heure d'arrivée : ");
+            //string arriveeH = Console.ReadLine();
+
+            //Console.Write("Ecrivez les minutes d'arrivée : ");
+            //string arriveeM = Console.ReadLine();
+
+            //int departHInt = Convert.ToInt32(departH);
+            //int arriveeHInt = Convert.ToInt32(arriveeH);
+
+            //int departMInt = Convert.ToInt32(departM);
+            //int arriveeMInt = Convert.ToInt32(arriveeM);
+
+
+            //// si les minutes d'arrivée sont plus petites que le départ
+            //if (arriveeMInt - departMInt < 0)
+            //{
+            //    if (arriveeHInt - departHInt < 0)
+            //    {
+            //        Console.WriteLine("L'heure de départ est après l'heure d'arrivée ..");
+            //    }
+            //    else
+            //    {
+            //        if (arriveeHInt - departHInt != 0)
+            //        { 
+            //            int diffH = arriveeHInt - departHInt - 1;
+            //            Console.WriteLine("Il y a " + diffH + " heure(s) et " + (60 - departMInt + arriveeMInt) + " minutes de différence.");
+            //        } else {
+            //            Console.WriteLine("Il y a 0 heure(s) et " + (60 - departMInt + arriveeMInt) + " minutes de différence.");
+            //        }
+                   
+            //    }
+            //} else
+            //{
+            //    if (arriveeHInt-departHInt < 0)
+            //    {
+            //        Console.WriteLine("L'heure de départ est après l'heure d'arrivée ..");
+            //    } else
+            //    {
+            //        Console.WriteLine("Il y a " + (arriveeHInt - departHInt) + " heure(s) et " + (arriveeMInt - departMInt) + " minutes de différence.");
+                //}
+            
+            //}
+
+            // 12.
+
+            //Console.Write("Ecrivez le jour : ");
+            //string jour = Console.ReadLine();
+            //int jourInt = Convert.ToInt32(jour);
+
+            //Console.Write("Ecrivez le mois : ");
+            //string mois = Console.ReadLine();
+            //int moisInt = Convert.ToInt32(mois);
+
+            //Console.Write("Ecrivez l'année : ");
+            //string annee = Console.ReadLine();
+            //int anneeInt = Convert.ToInt32(annee);
+
+            //if ((anneeInt % 400 == 0 || anneeInt % 100 != 0) && (anneeInt % 4 == 0))
+            //{
+            //   if (moisInt == 2)
+            //   {
+            //        if (jourInt == 28)
+            //        {
+            //            jourInt++;
+            //        }
+            //   } else
+            //    {
+            //        if (moisInt%2)
+            //    }
+
+
+            //} else
+            //{
+                
+            //}
+
+
+        // 13.
+
+        Console.WriteLine("Entrez deux valeurs :");
+        string value1 = Console.ReadLine();
+        string value2 = Console.ReadLine();
+=======
             /*         Console.WriteLine("Saisissez le pion a bouger : ");
                      string value = Console.ReadLine();
 
@@ -292,6 +468,7 @@ namespace exo3
                 }
             }
 
+>>>>>>> dc3535ff47c5d9799716a6ac7c6901dd7fe3e218
 
 
 
