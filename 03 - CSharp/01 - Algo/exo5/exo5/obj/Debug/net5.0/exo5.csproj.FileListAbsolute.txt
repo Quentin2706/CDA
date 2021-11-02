@@ -1,0 +1,16 @@
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\exo5.exe
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\exo5.deps.json
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\exo5.runtimeconfig.json
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\exo5.runtimeconfig.dev.json
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\exo5.dll
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\ref\exo5.dll
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\bin\Debug\net5.0\exo5.pdb
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.csproj.AssemblyReference.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.GeneratedMSBuildEditorConfig.editorconfig
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.AssemblyInfoInputs.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.AssemblyInfo.cs
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.csproj.CoreCompileInputs.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.dll
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\ref\exo5.dll
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.pdb
+E:\Developpement_Web\CDAQuentin\03 - CSharp\01 - Algo\exo5\exo5\obj\Debug\net5.0\exo5.genruntimeconfig.cache
