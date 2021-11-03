@@ -47,8 +47,9 @@ namespace exo5
             //Console.Write(t+" "+result);
 
             //3
-            //bool val;
+            //bool conversion;
             //string t;
+            //string t2 = "";
             //int ti;
             //int tj;
             //string temp;
@@ -61,22 +62,22 @@ namespace exo5
             //do
             //{
             //    Console.Write("saisissez ti : ");
-            //    val = int.TryParse(Console.ReadLine(), out ti);
+            //    conversion = int.TryParse(Console.ReadLine(), out ti);
 
             //    Console.Write("saisissez tj : ");
-            //    val = int.TryParse(Console.ReadLine(), out tj);
+            //    conversion &= int.TryParse(Console.ReadLine(), out tj);
 
-            //    if (!val)
+            //    if (!conversion)
             //        Console.WriteLine("Entrez une valeur positive");
 
-            //} while (!val || ti < 0 || tj < 0 || tj < ti || ti > t.Length || tj > t.Length);
+            //} while (!conversion || ti < 0 || tj < ti || tj > t.Length);
 
             //for (int i = ti; i < tj; i++)
             //{
-            //    temp += t[i];
+            //    t2 = t2.Insert(t2.Length, t[i].ToString());
             //}
 
-            //Console.Write(t.Insert(t.Length," "+temp));
+            //Console.Write(t2);
 
 
 
@@ -100,21 +101,27 @@ namespace exo5
 
             // 5
             //string t;
-            //string a;
-            //string b;
+            //char a;
+            //char b;
 
 
             //Console.Write("saisissez une chaine de caractères : ");
             //t = Console.ReadLine();
 
             //Console.Write("La lettre que vous voulez changer : ");
-            //a = Console.ReadLine();
+            //a = char.Parse(Console.ReadLine());
 
-            //Console.Write("la lettre que vous voulez remplacer par "+a+" : ");
-            //b = Console.ReadLine();
+            //Console.Write("la lettre que vous voulez remplacer par " + a + " : ");
+            //b = char.Parse(Console.ReadLine());
 
+            //for (int i = 0; i < t.Length; i++)
+            //{
+            //    if (t[i] == a)
+            //    {
+            //        t[i] = b;
+            //    }
+            //}
 
-            //Console.WriteLine(t.Replace(a, b));
 
             //6
             //string t;
@@ -131,12 +138,12 @@ namespace exo5
 
 
 
-            string calcul;
-            int cptOuv = 0;
-            int cptFer = 0;
+            //string calcul;
+            //int cptOuv = 0;
+            //int cptFer = 0;
 
-            Console.WriteLine("Entrez votre calcul");
-            calcul = Console.ReadLine();
+            //Console.WriteLine("Entrez votre calcul");
+            //calcul = Console.ReadLine();
             //for (int i = 0; i < calcul.Length; i++)
             //{
             //    if (calcul[i] == '(')
@@ -150,29 +157,29 @@ namespace exo5
             //    }
             //}
 
-            int cpt = 0;
+            //int cpt = 0;
 
-            while(cptOuv >= cptFer && cpt < calcul.Length-1)
-            {
-                if (calcul[cpt] == '(')
-                {
-                    cptOuv++;
-                }
+            //while(cptOuv >= cptFer && cpt < calcul.Length-1)
+            //{
+            //    if (calcul[cpt] == '(')
+            //    {
+            //        cptOuv++;
+            //    }
 
-                if (calcul[cpt] == ')')
-                {
-                    cptFer++;
-                }
-                cpt++;
-            }
+            //    if (calcul[cpt] == ')')
+            //    {
+            //        cptFer++;
+            //    }
+            //    cpt++;
+            //}
 
-            if (cptOuv == cptFer )
-            {
-                Console.WriteLine("expression correctement parenthesée.");
-            } else
-            {
-                Console.WriteLine("expression mal parenthesée.");
-            }
+            //if (cptOuv == cptFer )
+            //{
+            //    Console.WriteLine("expression correctement parenthesée.");
+            //} else
+            //{
+            //    Console.WriteLine("expression mal parenthesée.");
+            //}
 
 
 
