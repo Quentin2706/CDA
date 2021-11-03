@@ -231,46 +231,6 @@ namespace exo4
 
             //Console.Write("Le résultat final est : " + result);
 
-
-            //static double DemanderDouble()
-            //{
-            //    bool val;
-            //    double nb;
-            //    val = true;
-
-            //    do
-            //    {
-            //        Console.Write("Entrez une valeur : ");
-            //        val = double.TryParse(Console.ReadLine(), out nb);
-                    
-            //        if (!val)
-            //            Console.WriteLine("Saisie incorrecte.");
-
-            //    } while (!val);
-
-            //    return nb;
-            //}
-
-            //// DemanderDouble();
-
-            //static double DemanderDoubleNonNull()
-            //{
-            //    bool val;
-            //    double nb;
-            //    val = true;
-
-            //    do
-            //    {
-            //        Console.Write("Entrez une valeur : ");
-            //        val = double.TryParse(Console.ReadLine(), out nb);
-
-            //        if (!val)
-            //            Console.WriteLine("Saisie incorrecte.");
-
-            //    } while (!val || nb != 0);
-            //    return nb;
-            //}
-
         }
 
 
@@ -334,6 +294,7 @@ namespace exo4
         static double calculSimple(double valeur1, char operateur, double valeur2)
         {
             double resultat;
+            resultat = 0;
             switch (operateur)
             {
                 case '+':
