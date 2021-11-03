@@ -271,132 +271,113 @@ namespace exo4
             //    return nb;
             //}
 
-            //// DemanderDoubleNonNull();
-
-            //static int DemanderEntierPositif()
-            //{
-            //    bool val;
-            //    int nb;
-            //    val = true;
-
-            //    do
-            //    {
-            //        Console.Write("Entrez une valeur : ");
-            //        val = int.TryParse(Console.ReadLine(), out nb);
-
-            //        if (!val || nb <= 0)
-            //            Console.WriteLine("Saisie incorrecte.");
-
-            //    } while (!val || nb <= 0);
-            //    return nb;
-            //}
-
-            //// DemanderEntierPositif();
-
-
-            static char DemanderOperateur()
-            {
-                bool ok = true;
-                char op;
-                bool condition;
-
-                do
-                {
-                    Console.Write("Entrez un opérateur +,-,*,/,$,!,V : ");
-                    ok = char.TryParse(Console.ReadLine(), out op);
-                    condition = !ok || (op != '+' && op != '-' && op != '*' && op != '/' && op != '$' && op != '!' && op != 'V' && op != 'v');
-                    if (condition)
-                        Console.WriteLine("Saisie incorrecte.");
-
-                } while (condition);
-                return op;
-            }
-
-            //  DemanderOperateur();
-
-            static double Calcul(double valeur, char operateur)
-            {
-                double result;
-                result = 0;
-
-                switch (operateur)
-                {
-                    case 'V':
-                        result = Math.Sqrt(valeur);
-                        break;
-
-                    case '!':
-                        result = Math.Round(valeur);
-                        for (int i = 1; i < valeur; i++)
-                        {
-                            result *= i;
-                        }
-                        break;
-                }
-                return result;
-            }
-
-            //// CalculDouble(5.5 , 'V');
-
-
-            //static double CalculSimple(double valeur, char operateur, double valeur2)
-            //{
-            //    double result;
-            //    result = 0;
-
-            //    switch (operateur)
-            //    {
-            //        case '+':
-            //            result = valeur + valeur2;
-            //            break;
-            //        case '-':
-            //            result = valeur - valeur2;
-            //            break;
-            //        case '/':
-            //            result = valeur / valeur2;
-            //            break;
-            //        case '*':
-
-            //            result = valeur * valeur2;
-            //            break;
-
-            //        case '$':
-            //            result = Math.Round(valeur);
-            //            result = Math.Pow(valeur, valeur2);
-            //            break;
-            //    }
-            //    return result;
-            //}
-            //// Console.WriteLine(" = " + result);
-            //// CalculSimple(5.4, '$' ,6.8);
-
-            //static void Calculatrice()
-            //{
-            //    double valDouble1;
-            //    double valDouble2;
-            //    bool flag = true;
-            //    char op;
-            //    valDouble1 = DemanderDouble();
-
-
-
-            //    op = DemanderOperateur();
-
-            //    if (op == '/')
-            //    {
-            //        valDouble2 = DemanderDoubleNonNull();
-            //    }
-            //    else if (op == '$')
-            //    {
-
-            //    }
-            //    else
-            //    {
-            //        valDouble2 = DemanderDouble();
-            //    }
-            //}
-
-
         }
+
+
+        public static int demanderEntierPositif(string texte)
+        {
+            int valeur;
+            bool conversionReussie;
+            do
+            {
+                Console.WriteLine(texte);
+                conversionReussie = int.TryParse(Console.ReadLine(), out valeur);
+
+            } while (!conversionReussie || valeur < 0);
+            return valeur;
+        }
+
+        static double demanderDouble(string texte)
+        {
+            double nb;
+            bool ok;
+            do
+            {
+                Console.Write(texte);
+                ok = double.TryParse(Console.ReadLine(), out nb);
+            } while (!ok);
+            return nb;
+        }
+
+        public static double demanderDoubleNonNull(string texte)
+        {
+            double n;
+            bool conversionReussie;
+            do
+            {
+                Console.WriteLine(texte);
+                conversionReussie = double.TryParse(Console.ReadLine(), out n);
+            } while (!conversionReussie || n != 0);
+            return n;
+        }
+
+
+        static char DemanderOperateur()
+        {
+            bool ok = true;
+            char op;
+            bool condition;
+
+            do
+            {
+                Console.Write("Entrez un opérateur +,-,*,/,$,!,V : ");
+                ok = char.TryParse(Console.ReadLine(), out op);
+                condition = !ok || (op != '+' && op != '-' && op != '*' && op != '/' && op != '$' && op != '!' && op != 'V' && op != 'v');
+                if (condition)
+                    Console.WriteLine("Saisie incorrecte.");
+
+            } while (condition);
+            return char.ToUpper(op);
+        }
+
+
+        static double calculSimple(double valeur1, char operateur, double valeur2)
+        {
+            double resultat;
+            switch (operateur)
+            {
+                case '+':
+                    resultat = valeur1 + valeur2;
+                    break;
+                case '-':
+                    resultat = valeur1 - valeur2;
+                    break;
+                case '*':
+                    resultat = valeur1 * valeur2;
+                    break;
+                case '/':
+                    resultat = valeur1 / valeur2;
+                    break;
+                case '$':
+                    resultat = Math.Pow(valeur1, valeur2);
+                    break;
+                default:
+                    break;
+            }
+            return resultat;
+        }
+
+        static double Calcul(double valeur, char operateur)
+        {
+            double result;
+            result = 0;
+
+            switch (operateur)
+            {
+                case 'V':
+                    result = Math.Sqrt(valeur);
+                    break;
+
+                case '!':
+                    result = Math.Round(valeur);
+                    for (int i = 1; i < valeur; i++)
+                    {
+                        result *= i;
+                    }
+                    break;
+            }
+            return result;
+        }
+
     }
 }

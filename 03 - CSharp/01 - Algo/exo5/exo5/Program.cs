@@ -117,17 +117,20 @@ namespace exo5
             //Console.WriteLine(t.Replace(a, b));
 
             //6
-            string t;
-            int index;
+            //string t;
+            //int index;
 
-            Console.WriteLine("Entrez le nom d'un fichier : ");
-            t = Console.ReadLine();
+            //Console.WriteLine("Entrez le nom d'un fichier : ");
+            //t = Console.ReadLine();
 
-            index = t.LastIndexOf(".");
+            //index = t.LastIndexOf(".");
 
 
-            Console.WriteLine("nom de fichier : " + t.Substring(0, index));
-            Console.WriteLine("Extension : " + t.Substring(index));
+            //Console.WriteLine("nom de fichier : " + t.Substring(0, index));
+            //Console.WriteLine("Extension : " + t.Substring(index));
+
+
+
 
 
         }
