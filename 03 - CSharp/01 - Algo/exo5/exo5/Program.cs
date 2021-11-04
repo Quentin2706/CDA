@@ -138,48 +138,35 @@ namespace exo5
 
 
 
-            //string calcul;
-            //int cptOuv = 0;
-            //int cptFer = 0;
+            string calcul;
+            int cptOuv = 0;
+            int cptFer = 0;
+            int cpt = 0;
 
-            //Console.WriteLine("Entrez votre calcul");
-            //calcul = Console.ReadLine();
-            //for (int i = 0; i < calcul.Length; i++)
-            //{
-            //    if (calcul[i] == '(')
-            //    {
-            //        cptOuv++;
-            //    }
+            Console.WriteLine("Entrez votre calcul");
+            calcul = Console.ReadLine();
 
-            //    if (calcul[i] == ')')
-            //    {
-            //        cptFer++;
-            //    }
-            //}
+            while (cptOuv >= cptFer && cpt < calcul.Length - 1)
+            {
+                if (calcul[cpt] == '(')
+                {
+                    cptOuv++;
+                } else if (calcul[cpt] == ')')
+                {
+                    cptFer++;
+                }
+                
+                cpt++;
+            }
 
-            //int cpt = 0;
-
-            //while(cptOuv >= cptFer && cpt < calcul.Length-1)
-            //{
-            //    if (calcul[cpt] == '(')
-            //    {
-            //        cptOuv++;
-            //    }
-
-            //    if (calcul[cpt] == ')')
-            //    {
-            //        cptFer++;
-            //    }
-            //    cpt++;
-            //}
-
-            //if (cptOuv == cptFer )
-            //{
-            //    Console.WriteLine("expression correctement parenthesée.");
-            //} else
-            //{
-            //    Console.WriteLine("expression mal parenthesée.");
-            //}
+            if (cptOuv == cptFer)
+            {
+                Console.WriteLine("expression correctement parenthesée.");
+            }
+            else
+            {
+                Console.WriteLine("expression mal parenthesée.");
+            }
 
 
 

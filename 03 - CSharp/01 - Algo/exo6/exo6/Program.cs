@@ -231,6 +231,26 @@ namespace exo6
             //    Console.WriteLine("L'indice " + elem + " a pour valeur " + nb);
             //}
 
+            //0.5 0.2 0.1 0.05 0.01
+            // 15 
+            double montant;
+            double[] stock = new double[6] { 0.5, 0.2, 0.1, 0.05, 0.02 , 0.01 };
+            int[] total = new int[6];
+            Console.Write("Entrez le montant : ");
+
+            montant = double.Parse(Console.ReadLine());
+
+
+
+
+
+
+            foreach (var elem in total)
+            {
+                Console.Write(elem + " ");
+            }
+
+            Console.Write(montant);
 
 
 
