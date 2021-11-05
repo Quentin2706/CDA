@@ -8,7 +8,7 @@ namespace Comptes
 {
     class Comptes
     {
-        private static int _codeIncremente;
+        private static int _codeIncremente = 1;
         public double Solde { get; }
         public int Code { get; }
 
@@ -22,11 +22,20 @@ namespace Comptes
             this.Proprietaire = client;
         }
 
+
+        public static int GetCodeIncremente()
+        {
+            return _codeIncremente;
+        }
+
+
         public string Afficher()
         {
-            return "\nNuméro de compte : " + this.Code
+            return "*******************" 
+                    + "\nNuméro de compte : " + this.Code
                     + "\nSolde du compte :" + this.Solde 
-                    + this.Proprietaire.Afficher();
+                    + this.Proprietaire.Afficher()
+                    + "\n*******************";
         }
 
     }

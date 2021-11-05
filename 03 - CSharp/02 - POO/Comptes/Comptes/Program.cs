@@ -6,6 +6,7 @@ namespace Comptes
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Compte n°"+Comptes.GetCodeIncremente());
             Console.WriteLine("Donner le CIN :");
             string cin = Console.ReadLine();
 
@@ -22,10 +23,8 @@ namespace Comptes
 
             Comptes compte = new Comptes(1000, c);
 
-
-            Console.WriteLine("*******************");
             Console.WriteLine(compte.Afficher());
-            Console.WriteLine("*******************");
+
 
 
         }
