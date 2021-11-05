@@ -1,0 +1,16 @@
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.csproj.AssemblyReference.cache
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.AssemblyInfoInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.AssemblyInfo.cs
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.csproj.CoreCompileInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\personnes.exe
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\personnes.deps.json
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\personnes.runtimeconfig.json
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\personnes.runtimeconfig.dev.json
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\personnes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\ref\personnes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\bin\Debug\net5.0\personnes.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\ref\personnes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\personnes\personnes\obj\Debug\net5.0\personnes.genruntimeconfig.cache

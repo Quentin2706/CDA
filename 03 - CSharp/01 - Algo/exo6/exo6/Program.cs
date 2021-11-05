@@ -96,10 +96,10 @@ namespace exo6
             //do
             //{
 
-            //    temp = t[t.Length-1];
+            //    temp = t[t.Length - 1];
             //    for (int i = t.Length - 1; i > 0; i--)
             //    {
-            //        t[i] = t[i-1];
+            //        t[i] = t[i - 1];
             //    }
             //    t[0] = temp;
             //    n--;
@@ -234,25 +234,30 @@ namespace exo6
             //0.5 0.2 0.1 0.05 0.01
             // 15 
             double montant;
-            double[] stock = new double[6] { 0.5, 0.2, 0.1, 0.05, 0.02 , 0.01 };
-            int[] total = new int[6];
+            double[] stock = new double[8] { 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
+            int[] total = new int[8];
             Console.Write("Entrez le montant : ");
 
             montant = double.Parse(Console.ReadLine());
 
-
-
-
-
-
-            foreach (var elem in total)
+            Console.WriteLine("on donnera :");
+            for (int i = 0; i < stock.Length; i++)
             {
-                Console.Write(elem + " ");
+                 while (montant >= stock[i])
+                 {
+                    montant -= stock[i];
+                    montant = Math.Round(montant, 2);
+                    total[i]++;
+                 }
+                if (total[i] > 1)
+                {
+                    Console.WriteLine(total[i] + " pièces de " + stock[i] + " euros.");
+                }
+                else if (total[i] > 0)
+                {
+                    Console.WriteLine(total[i] + " pièce de " + stock[i] + " euros.");
+                }
             }
-
-            Console.Write(montant);
-
-
 
         }
     }

@@ -1,0 +1,16 @@
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\Voitures.exe
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\Voitures.deps.json
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\Voitures.runtimeconfig.json
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\Voitures.runtimeconfig.dev.json
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\Voitures.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\ref\Voitures.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\bin\Debug\net5.0\Voitures.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.csproj.AssemblyReference.cache
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.AssemblyInfoInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.AssemblyInfo.cs
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.csproj.CoreCompileInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\ref\Voitures.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\Voitures\Voitures\obj\Debug\net5.0\Voitures.genruntimeconfig.cache
