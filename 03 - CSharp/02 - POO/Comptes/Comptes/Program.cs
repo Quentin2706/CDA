@@ -22,7 +22,8 @@ namespace Comptes
             Clients c = new Clients(cin, nom, prenom, tel);
 
             Comptes compte = new Comptes(1000, c);
-
+            Console.WriteLine(compte.Afficher()) ;
+            compte.Crediter(31);
             Console.WriteLine(compte.Afficher());
 
 

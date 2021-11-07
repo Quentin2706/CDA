@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "U:\\59011-07-01\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj": {}
+    "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj": {}
   },
   "projects": {
-    "U:\\59011-07-01\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj": {
+    "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "U:\\59011-07-01\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj",
+        "projectUniqueName": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj",
         "projectName": "Comptes",
-        "projectPath": "U:\\59011-07-01\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj",
-        "packagesPath": "C:\\Users\\59011-07-01\\.nuget\\packages\\",
-        "outputPath": "U:\\59011-07-01\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\obj\\",
+        "projectPath": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\Comptes.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Developpement_Web\\CDAQuentin\\03 - CSharp\\02 - POO\\Comptes\\Comptes\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\59011-07-01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
