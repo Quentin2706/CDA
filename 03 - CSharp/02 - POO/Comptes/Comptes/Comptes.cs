@@ -24,20 +24,14 @@ namespace Comptes
 
         public Comptes(double soldeParam, Clients client)
         {
-            _solde = soldeParam;
+            _solde = Math.Round(soldeParam,2);
             this.Code = _codeIncremente++;
             this.Proprietaire = client;
         }
 
-
-            public int GetCodeIncremente()
-            {
-                return _codeIncremente;
-            }
-
-        public staticint GetCodeIncremente()
+        public static int GetNbCompte()
         {
-            return _codeIncremente;
+            return _codeIncremente-1;
         }
 
 
@@ -45,7 +39,7 @@ namespace Comptes
         {
             return "*******************" 
                     + "\nNuméro de compte : " + this.Code
-                    + "\nSolde du compte :" + this._solde 
+                    + "\nSolde du compte :" + Math.Round(this._solde,2) 
                     + this.Proprietaire.Afficher()
                     + "\n*******************";
         }
@@ -53,18 +47,25 @@ namespace Comptes
 
         public void Crediter(double somme)
         {
-            this._solde += somme;
+            this._solde += Math.Round(somme,2);
         }
 
         public void Crediter(double somme, Comptes compte)
         {
-            compte.Crediter(somme);
-            this.Debiter(somme);
+            this.Crediter(somme);
+            compte.Debiter(somme);
         }
 
         public double Debiter(double montant)
         {
-            return this._solde -= montant;
+            return this._solde -= Math.Round(montant,2);
         }
 
-        public double Debiter(double montant, Comptes compte
+        public void Debiter(double montant, Comptes compte)
+        {
+            compte.Crediter(montant);
+            this.Debiter(montant);
+        }
+
+    }
+}

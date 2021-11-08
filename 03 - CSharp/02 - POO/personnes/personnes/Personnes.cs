@@ -20,7 +20,6 @@ namespace personnes
 
         }
 
-        
         public Personnes(string nom, string prenom, int age, string adresse)
         {
             this.nom = nom;

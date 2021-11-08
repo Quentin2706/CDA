@@ -1,0 +1,16 @@
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\Employes.exe
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\Employes.deps.json
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\Employes.runtimeconfig.json
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\Employes.runtimeconfig.dev.json
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\Employes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\ref\Employes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\bin\Debug\net5.0\Employes.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.AssemblyInfoInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.AssemblyInfo.cs
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.csproj.CoreCompileInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\ref\Employes.dll
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.genruntimeconfig.cache
+U:\59011-07-01\03 - CSharp\02 - POO\Employes\Employes\obj\Debug\net5.0\Employes.csproj.AssemblyReference.cache

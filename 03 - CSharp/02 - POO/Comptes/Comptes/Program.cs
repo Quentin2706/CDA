@@ -9,7 +9,7 @@ namespace Comptes
             bool sommeValide;
             double somme;
 
-            Console.WriteLine("Compte n°"+Comptes.GetCodeIncremente());
+            Console.WriteLine("Compte n°"+ Comptes.GetNbCompte());
             Console.WriteLine("Donner le CIN :");
             string cin = Console.ReadLine();
 
@@ -24,24 +24,32 @@ namespace Comptes
 
             Clients c = new Clients(cin, nom, prenom, tel);
 
-            Comptes compte = new Comptes(1000, c);
+            Comptes compte = new Comptes(0, c);
             Console.WriteLine(compte.Afficher()) ;
 
+            Console.WriteLine();
 
-            Clients c2 = new Clients("dadzada", "Dupont", "toto");
-            Comptes compte2 = new Comptes(1000, c2);
-            Console.WriteLine(compte.Afficher());
+            Clients c2 = new Clients("dadzada", "Dupont", "toto","");
+            Comptes compte2 = new Comptes(556.20, c2);
+            Console.WriteLine(compte2.Afficher());
 
             do
             {
-                Console.Write("Entrez le montant  à créditer pour le compte " + c + " : ");
+                Console.Write("Donner le montant à déposer : ");
                 sommeValide = double.TryParse(Console.ReadLine(), out somme);
-            } while (!sommeValide || somme < 0);
+
+                if (somme > compte2.GetSolde())
+                    Console.WriteLine("Vous essayez de donner plus que ce que vous avez sur le compte n°"+compte2.Code);
+
+            } while (!sommeValide || somme < 0 || somme > compte2.GetSolde());
             compte.Crediter(somme, compte2);
-            Console.WriteLine("Virement du compte n°"+compte.GetCodeIncremente()+ " vers le compte n°"+compte2.GetCodeIncremente()+" d'un montant de "+somme+" euros a été effectué.");
+            Console.WriteLine("Opération bien effectuée.");
+            Console.WriteLine(compte.Afficher());
+            Console.WriteLine();
+            Console.WriteLine(compte2.Afficher());
 
 
-
+            Console.WriteLine("Nombre de comptes crées : " + Comptes.GetNbCompte());
 
 
         }
