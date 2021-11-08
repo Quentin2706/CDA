@@ -10,7 +10,7 @@ namespace Comptes
     {
         private static int _codeIncremente = 1;
 
-        private double solde;
+        private double _solde;
         //public double Solde { get; }
         public int Code { get; }
 
@@ -18,42 +18,53 @@ namespace Comptes
 
         public double GetSolde()
         {
-            return solde;
+            return this._solde;
         }
 
 
         public Comptes(double soldeParam, Clients client)
         {
-            solde = soldeParam;
+            _solde = soldeParam;
             this.Code = _codeIncremente++;
             this.Proprietaire = client;
         }
 
 
-            public static int GetCodeIncremente()
-             {
+            public int GetCodeIncremente()
+            {
+                return _codeIncremente;
+            }
+
+        public staticint GetCodeIncremente()
+        {
             return _codeIncremente;
-             }
+        }
 
 
         public string Afficher()
         {
             return "*******************" 
                     + "\nNuméro de compte : " + this.Code
-                    + "\nSolde du compte :" + this.solde 
+                    + "\nSolde du compte :" + this._solde 
                     + this.Proprietaire.Afficher()
                     + "\n*******************";
         }
 
+
         public void Crediter(double somme)
         {
-            solde += somme;
+            this._solde += somme;
         }
 
-        //public double Crediter(double montant, Comptes compte)
-        //{
-        //    return compte.Solde
-        //}
+        public void Crediter(double somme, Comptes compte)
+        {
+            compte.Crediter(somme);
+            this.Debiter(somme);
+        }
 
-    }
-}
+        public double Debiter(double montant)
+        {
+            return this._solde -= montant;
+        }
+
+        public double Debiter(double montant, Comptes compte

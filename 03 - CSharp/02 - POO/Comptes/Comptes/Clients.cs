@@ -30,10 +30,16 @@ namespace Comptes
 
         public string Afficher()
         {
-            return "\nCIN : " + this.CIN
-                    +"\nNOM :"+this.Nom
-                    + "\nPrénom :" + this.Prenom
-                    + "\nTel :" + this.Tel;
+            string aff;
+
+            aff = "\nCIN : " + this.CIN
+                    + "\nNOM :" + this.Nom
+                    + "\nPrénom :" + this.Prenom;
+
+            if (this.Tel != "")
+                 aff+="\nTel :" + this.Tel;
+
+            return aff;
         }
     }
 }
