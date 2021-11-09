@@ -17,7 +17,6 @@ namespace Employes
         public Agences Agence { get; set; }
         public List<Enfants> Enfants { get; set; } = new List<Enfants>();
 
-        public static int NbEmploye { get; private set; } = 0;
 
         public Employes(string nom, string prenom, DateTime dateEmbauche, string fonction, double salaireAnnuel, string service, Agences agence, List<Enfants> enfants)
         {
@@ -29,7 +28,6 @@ namespace Employes
             this.Service = service;
             this.Agence = agence;
             this.Enfants = enfants;
-            ++NbEmploye;
         }
 
         public Employes(string nom, string prenom, DateTime dateEmbauche, string fonction, double salaireAnnuel, string service, Agences agence)
@@ -41,14 +39,11 @@ namespace Employes
             this.SalaireAnnuel = salaireAnnuel;
             this.Service = service;
             this.Agence = agence;
-            ++NbEmploye;
         }
 
         public int Anciennete()
         {
-            DateTime aujd = DateTime.Now;
-            TimeSpan diffResult = aujd - DateEmbauche;
-            return (int) (diffResult.TotalDays/365);
+            return (int) ((DateTime.Now - this.DateEmbauche).TotalDays/365);
         }
 
         public double PrimeAnnuelle()
@@ -94,7 +89,7 @@ namespace Employes
         {
             if (E1.Service == E2.Service)
             {
-                ComparerToNomPrenom(E1,E2);
+                return ComparerToNomPrenom(E1,E2);
             } else if (E1.Service.CompareTo(E2.Service) == 1)
             {
                 return 1;
@@ -145,17 +140,39 @@ namespace Employes
                 aff += "Non\n";
             }
 
-            aff += "Chèques noel :"; 
-            if (this.Enfants.Count == 0)
-                aff+= " Non\n";
+
+
+
+            List<int> cheques = new List<int>();
+
             for (int i = 0; i < this.Enfants.Count; i++)
             {
-                if (this.Enfants[i].ChequesNoel() != 0)
-                    aff+= "\n\t1 chèque noel de : " + this.Enfants[i].ChequesNoel()+ " euros";
+                if (this.Enfants.Count != 0 && this.Enfants[i].ChequesNoel() != 0)
+                    cheques.Add(this.Enfants[i].ChequesNoel());
             }
-           
 
-             aff+= "\n****************\n";
+            int cheque20 = cheques.Count(x => x == 20);
+            int cheque30 = cheques.Count(x => x == 30);
+            int cheque50 = cheques.Count(x => x == 50);
+
+            aff += "Chèques noel :";
+            if (this.Enfants.Count == 0 ||(cheque20 == 0 && cheque30 == 0 && cheque50 == 0))
+            {
+                aff += " Non\n";
+            }
+            else
+            {
+                aff += " Oui\n";
+            }
+
+            if (cheque20 != 0)
+                aff += "\n\t" + cheque20 + " chèque(s) noel de 20 euros";
+            if (cheque30 != 0)
+                aff += "\n\t" + cheque30 + " chèque(s) noel de 30 euros";
+            if (cheque50 != 0)
+                aff += "\n\t" + cheque50 + " chèque(s) noel de 50 euros";
+
+            aff += "\n****************\n";
             return aff;
         }
 
