@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SpaceInvaders
@@ -10,60 +11,83 @@ namespace SpaceInvaders
     {
         public int NbLignes { get; set; }
         public int NbColonnes { get; set; }
-        public char[,] Grille { get; set; };
-
-        public Space(int nbLignes, int nbColonnes)
+        public char[,] Grille { get; set; }
+        public char[] temp { get; set; }
+        public Invader Invader { get; set; }
+        public Space(int nbLignes, int nbColonnes, Invader invader)
         {
             this.NbLignes = nbLignes;
             this.NbColonnes = nbColonnes;
-            this.Grille = new 
-            for (int i = 0; i < this.NbLignes; i++)
-            {
-                for (int j = 0; j < this.NbColonnes; j++)
+            this.Grille = new char[nbLignes,nbColonnes];
+            this.Invader = invader;
+            this.CreerGrille();
+        }
+
+        private void CreerGrille()
+        {
+                for (int i = 0; i < this.NbLignes; i++)
                 {
-                    temp = new();
-                    temp.Add(' ');
+                    for (int j = 0; j < this.NbColonnes; j++)
+                    {
+                        this.Grille[0, j] = Convert.ToChar(Invader.ToString());
+                        this.Grille[i, j] = ' ';
+                    }
                 }
-                Grille.Add(temp);
+        }
+
+
+        public void tirer(int missile)
+        {
+            if (missile >= 0 && missile < this.NbColonnes)
+            { 
+                int cpt = this.NbLignes - 1;
+            do
+            {
+                this.Grille[cpt, missile] = '^';
+                
+                Console.WriteLine(this.ToString());
+                if (cpt < this.NbLignes)
+                    this.Grille[cpt++, missile] = ' ';
+                cpt-=2;
+                Thread.Sleep(1000);
+            } while (cpt >= 0);
+            this.Grille[0, missile] = ' ';
+            Console.WriteLine(this.ToString()); 
+            } else
+            {
+                Console.WriteLine("Tu es en dehors de l'espace ! :o ");
             }
         }
 
 
+
+
+
         public override string ToString()
         {
+            Console.Clear();
             string aff = "";
-            int cpt = 0;
-            int cpt2 = 0;
-            aff += "[";
-
-            //for (int i = 0; i < Grille.Count; i++)
-            //{
-            //    aff += "[";
-            //    for (int j = 0; j < Grille[i].Count; j++)
-            //    {
-            //        aff += "'" + Grille[i[j]] + "'";
-            //    }
-            //    aff += "]";
-            //    if (i < Grille.Count-1)
-            //        aff += ",";
-
-            //}
-            foreach (var colonne in Grille)
+            string aff2 = "";
+            for (int i = 0; i < this.NbColonnes; i++)
             {
-                aff += "[";
-                foreach (char ligne in colonne)
-                {
-                    aff += "' '";
-                    if (cpt2 < colonne.Count - 1)
-                        aff += ",";
-                    cpt2++;
-                }
-                aff += "]";
-                if (cpt < Grille.Count - 1)
-                    aff += ",";
-                cpt++;
+                aff2 += "─";
             }
-            aff += "]";
+
+            aff += "┌" + aff2 + "┐" + "\n";
+
+            for (int i = 0; i < this.NbLignes; i++)
+            {
+                aff += "|";
+                for (int j = 0; j < this.NbColonnes; j++)
+                {
+                    aff += Grille[i, j];
+
+                }
+                aff += "|\n";
+
+            }
+
+            aff += "└" + aff2 + "┘" + "\n";
             return aff;
         }
     }

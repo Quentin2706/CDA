@@ -6,8 +6,9 @@ namespace SpaceInvaders
     {
         static void Main(string[] args)
         {
-            Space s = new(4, 10);
-            Console.WriteLine(s);
+            Invader invader = new("#");
+            Space s = new(10, 10, invader);
+            s.tirer(10);
         }
     }
 }
