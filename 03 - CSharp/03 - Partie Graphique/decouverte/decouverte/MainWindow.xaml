@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:decouverte"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="941.713">
+        Title="Calculatrice" Height="350" Width="680" MinWidth="250" MinHeight="300" Background="#FF3C3C3C">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
@@ -21,27 +21,33 @@
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <TextBox Grid.Column="1" Grid.ColumnSpan="7" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" Text="TextBox" FontSize="22" Padding="10" />
-        <Button Content="1" FontSize="20" Grid.Column="1"  Grid.Row="3"/>
-        <Button Content="2" FontSize="20" Grid.Column="3"  Grid.Row="3"/>
-        <Button Content="3" FontSize="20" Grid.Column="5"  Grid.Row="3"/>
-        <Button Content="4" FontSize="20" Grid.Column="1"  Grid.Row="5"/>
-        <Button Content="5" FontSize="20" Grid.Column="3"  Grid.Row="5"/>
-        <Button Content="6" FontSize="20" Grid.Column="5"  Grid.Row="5"/>
-        <Button Content="7" FontSize="20" Grid.Column="1"  Grid.Row="7"/>
-        <Button Content="8" FontSize="20" Grid.Column="3"  Grid.Row="7"/>
-        <Button Content="9" FontSize="20" Grid.Column="5"  Grid.Row="7"/>
-        <Button Content="0" FontSize="20" Grid.Column="3"  Grid.Row="9"/>
+        <Button Content="1" FontSize="20" Grid.Column="1"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="2" FontSize="20" Grid.Column="3"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="3" FontSize="20" Grid.Column="5"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="4" FontSize="20" Grid.Column="1"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="5" FontSize="20" Grid.Column="3"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="6" FontSize="20" Grid.Column="5"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="7" FontSize="20" Grid.Column="1"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="8" FontSize="20" Grid.Column="3"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="9" FontSize="20" Grid.Column="5"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="0" FontSize="20" Grid.Column="3"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="+" FontSize="20" Grid.Column="7"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="-" FontSize="20" Grid.Column="7"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="/" FontSize="20" Grid.Column="5"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="*" FontSize="20" Grid.Column="7"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="=" FontSize="20" Grid.Column="7"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <Button Content="." FontSize="20" Grid.Column="1"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
 
     </Grid>
 </Window>
