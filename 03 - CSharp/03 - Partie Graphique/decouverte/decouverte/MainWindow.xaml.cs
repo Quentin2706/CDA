@@ -24,5 +24,10 @@ namespace decouverte
         {
             InitializeComponent();
         }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            aff.Text += ((Button)sender).Content;
+        }
     }
 }
