@@ -5,13 +5,414 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OperationSaisie"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1000">
+    <Window.Resources>
+        <SolidColorBrush x:Key="inputDisabled" Color="#FFCBCBCB"/>
+        <SolidColorBrush x:Key="colorRouge" Color="Red"/>
+        <LinearGradientBrush x:Key="LnrGrdEntete" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="1"/>
+            <GradientStop Color="#FFE3EBF3"/>
+        </LinearGradientBrush>
+    </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.01*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.01*"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Opération de pêche" VerticalAlignment="Center" FontWeight="Black"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <!--<ColumnDefinition Width="0.05*"/>-->
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <!--<ColumnDefinition Width="0.05*"/>-->
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="Navire">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Immatriculation :" HorizontalContentAlignment="Right"  VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="639451"   IsEnabled="False"  VerticalAlignment="Center" Background="{DynamicResource inputDisabled}"/>
+                        <Label Content="Nom :" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1"/>
+                        <TextBox Grid.Column="1"  Grid.Row="1" Text="PHILCATHAN"  VerticalAlignment="Center" IsEnabled="False" Background="{DynamicResource inputDisabled}" />
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Marée" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Départ :" HorizontalContentAlignment="Right"  VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="22/01/2013 - UCH - Granville"   IsEnabled="False"  VerticalAlignment="Center" Background="{DynamicResource inputDisabled}"/>
+                        <Label Content="Retour :" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1"/>
+                        <TextBox Grid.Column="1"  Grid.Row="1" Text="23/01/2013 - UCH - Granville"  VerticalAlignment="Center" IsEnabled="False" Background="{DynamicResource inputDisabled}" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Programme d'observation" Grid.Column="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Programme :" HorizontalContentAlignment="Right"  VerticalContentAlignment="Center" Foreground="{DynamicResource colorRouge}"/>
+                        <TextBox Grid.Column="1" Text="SIH-OBSMER"   IsEnabled="False"  VerticalAlignment="Center" Background="{DynamicResource inputDisabled}"/>
+                        <Label Content="Stratégie :" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1"/>
+                        <TextBox Grid.Column="1"  Grid.Row="1" Text="OBSMER démarchage"  VerticalAlignment="Center" IsEnabled="False" Background="{DynamicResource inputDisabled}" />
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Saisisseur" Grid.Column="3">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Opérateur de saisie :" HorizontalContentAlignment="Right"  VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="TETARD Xavier"   IsEnabled="False"  VerticalAlignment="Center" Background="{DynamicResource inputDisabled}"/>
+                        <Label Content="Dernière Modification :" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1"/>
+                        <TextBox Grid.Column="1"  Grid.Row="1" Text="25/11/2013 10:16:37"  VerticalAlignment="Center" IsEnabled="False" Background="{DynamicResource inputDisabled}" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+        <TabControl Grid.Row="2" Grid.Column="1">
+            <TabItem Header="Opération">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="1.5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Header="Début de l'opération (Filage)">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="4*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Date et heure :" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource colorRouge}"/>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <ComboBox VerticalAlignment="Center">
+                                            <ComboBoxItem Content="22/01/2013" IsSelected="true"/>
+                                        </ComboBox>
+
+                                        <ComboBox VerticalAlignment="Center" Grid.Column="1">
+                                            <ComboBoxItem Content="18:30" IsSelected="true"/>
+                                        </ComboBox>
+                                    </Grid>
+
+                                    <Label Content="Latitude :" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource colorRouge}" Grid.Row="1"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" Text="+49 14.100" VerticalAlignment="Center"/>
+
+                                    <Button Grid.Row="1" Grid.Column="2" BorderBrush="{x:Null}" Height="20" Width="20" >
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="questions.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+                                    </Button>
+
+                                    <Button  Grid.Row="1" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}">
+                                        <Image Source="Fleche.png"/>
+                                    </Button>
+
+                                    <Label Content="Longitude :" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource colorRouge}" Grid.Row="2"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" Text="-1 48.320" VerticalAlignment="Center"/>
+
+                                    <Button Grid.Row="2" Grid.Column="2" BorderBrush="{x:Null}" Height="20" Width="20" >
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="questions.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+                                    </Button>
+
+                                    <Button  Grid.Row="2" Grid.Column="3" Background="{x:Null}" BorderBrush="{x:Null}">
+                                        <Image Source="Fleche.png"/>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Fin de l'opération (Virage)" Grid.Column="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="4*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Content="Durée (h) :" HorizontalAlignment="Right"/>
+                                    <TextBox Grid.Column="1" Text="2:00" Background="{DynamicResource inputDisabled}" VerticalAlignment="Center" IsEnabled="False"/>
+
+
+                                </Grid>
+
+
+
+
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.1*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Label Content="Date et heure :" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource colorRouge}"/>
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <ComboBox VerticalAlignment="Center">
+                                            <ComboBoxItem Content="22/01/2013" IsSelected="true"/>
+                                        </ComboBox>
+
+                                        <ComboBox VerticalAlignment="Center" Grid.Column="1">
+                                            <ComboBoxItem Content="20:30" IsSelected="true"/>
+                                        </ComboBox>
+                                    </Grid>
+
+                                    <Label Content="Latitude :" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource colorRouge}" Grid.Row="1"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" Text="+49 14.100" VerticalAlignment="Center"/>
+
+                                    <Button Grid.Row="1" Grid.Column="2" BorderBrush="{x:Null}" Height="20" Width="20" >
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="questions.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+                                    </Button>
+
+                                    <Label Content="Longitude :" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="{DynamicResource colorRouge}" Grid.Row="2"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" Text="-1 48.390" VerticalAlignment="Center"/>
+                                    <Button Grid.Row="2" Grid.Column="2" BorderBrush="{x:Null}" Height="20" Width="20" >
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="questions.png">
+                                            </ImageBrush>
+                                        </Button.Background>
+                                    </Button>
+
+
+                                </Grid>
+                            </Grid>
+                        </GroupBox>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Zones d'activité : 27E8" FontWeight="{DynamicResource gras}" Foreground="{DynamicResource enteteTabControl}" Background="{DynamicResource LnrGrdEntete}" VerticalContentAlignment="Center" />
+
+                        <Grid Grid.Row="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height= "1*"/>
+                                    <RowDefinition Height="4*"/>
+                                </Grid.RowDefinitions>
+                                <Label Content="Autres caractéristiques de l'opération" 
+                                       FontWeight="{DynamicResource gras}" 
+                                       Foreground="{DynamicResource enteteTabControl}" 
+                                       Background="{DynamicResource LnrGrdEntete}" VerticalContentAlignment="Center" />
+
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.2*"/>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="0.2*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.1*"/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="0.2*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Button BorderBrush="{x:Null}">
+                                                <Image Source="plus.png"/>
+                                            </Button>
+
+                                            <Button Grid.Row="2" BorderBrush="{x:Null}">
+                                                <Image Source="moins.png"/>
+                                            </Button>
+
+                                        </Grid>
+                                    </Grid>
+
+
+
+                                    <Grid Grid.Column="3">
+                                        <DataGrid>
+                                            <DataGrid.Columns>
+                                                <DataGridCheckBoxColumn Width="1*"/>
+                                                <DataGridTextColumn Header="Caractéristique" Width="6*"/>
+                                                <DataGridTextColumn Header="Valeur" Width="5*"/>
+                                                <DataGridTextColumn Header="Unité" Width="3*"/>
+                                                <DataGridTextColumn Header="Support" Width="4*"/>
+                                                <DataGridTextColumn Header="Fraction" Width="4*"/>
+                                                <DataGridTextColumn Header="Méthode" Width="7*"/>
+                                                <DataGridTextColumn Width="4*"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Grid>
+
+                                </Grid>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Expander Header="Navire associé" Grid.Row="2">
+                        <Expander.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFE0E8F0" Offset="0"/>
+                                <GradientStop Color="White" Offset="0.163"/>
+                            </LinearGradientBrush>
+                        </Expander.Background>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*"/>
+                                <ColumnDefinition Width="10.5*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+                            
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.2*"/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition Width="1.2*"/>
+                                    <ColumnDefinition Width="30*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Button BorderBrush="{x:Null}">
+                                    <Image Source="plus.png"/>
+                                </Button>
+
+                                <Button Grid.Column="2" BorderBrush="{x:Null}">
+                                    <Image Source="moins.png"/>
+                                </Button>
+
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>    
+                            </Grid>
+                        </Grid>
+
+                        
+
+                    </Expander>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Engin">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Positions Géographiques">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Commentaire">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
         
