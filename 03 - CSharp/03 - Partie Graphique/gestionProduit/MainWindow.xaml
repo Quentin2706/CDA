@@ -35,7 +35,7 @@
         <Button Content="Supprimer" Grid.Column="5" Grid.ColumnSpan="3" Background="{DynamicResource BcgBtn}" />
         <Button Content="Dupliquer" Grid.Column="9"  Background="{DynamicResource BcgBtn}" />
         <Button Content="Vider" Grid.Column="11"  Background="{DynamicResource BcgBtn}" />
-        <DataGrid Grid.ColumnSpan="11" Grid.Column="1" Grid.Row="2" VerticalScrollBarVisibility="Visible">
+        <DataGrid x:Name="dgProduits" Grid.ColumnSpan="11" Grid.Column="1" Grid.Row="2" VerticalScrollBarVisibility="Visible">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>
@@ -43,12 +43,7 @@
                     <GradientStop Color="Black"/>
                 </LinearGradientBrush>
             </DataGrid.Background>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="IdProduit" Width="1*"/>
-                <DataGridTextColumn Header="LibelleProduit" Width="5*"/>
-                <DataGridTextColumn Header="Catégories" Width="2*"/>
-                <DataGridTextColumn Header="Rayons" Width="2*"/>
-            </DataGrid.Columns>
+
         </DataGrid>
 
         <Button Content="Liste des catégories" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Background="{DynamicResource BcgBtn}" />

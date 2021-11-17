@@ -23,6 +23,35 @@ namespace gestionProduit
         public MainWindow()
         {
             InitializeComponent();
+            InitGrid();
         }
+
+        public void  InitGrid()
+        {
+            dgProduits.ItemsSource = CreerListe();
+        }
+
+
+        private List<Produits> CreerListe()
+        {
+            List<Produits> produits = new List<Produits>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Produits prod = new Produits(i, "Libelle" + i, "Catégorie " + i % 2, "rayon");
+                produits.Add(prod);
+            }
+
+            return produits;
+        }
+
+
+        //private void Resize()
+        //{
+        //                foreach (DataGridColumn colonne in dgProduits.Columns)
+        //    {
+        //        colonne.Width = 1;
+        //    }
+        //}
     }
 }
