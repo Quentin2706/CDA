@@ -15,14 +15,14 @@ namespace gestionProduit
 
         public string LibelleProduit { get; set; }
 
-        public string Catégorie { get; set; }
+        public string Categorie { get; set; }
         public string Rayon { get; set; }
 
-        public Produits(int idProduit, string libelleProduit, string catégorie, string rayon)
+        public Produits(int idProduit, string libelleProduit, string categorie, string rayon)
         {
             IdProduit = idProduit;
             LibelleProduit = libelleProduit;
-            Catégorie = catégorie;
+            Categorie = categorie;
             Rayon = rayon;
         }
     }

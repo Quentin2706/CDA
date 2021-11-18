@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,39 +21,73 @@ namespace gestionProduit
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {        
+        private string path = "../../bdd.json";
+
+        private List<Produits> produits;
+
         public MainWindow()
         {
             InitializeComponent();
+            produits = RecupDonnees();
             InitGrid();
         }
 
-        public void  InitGrid()
+
+            
+        public void InitGrid()
         {
-            dgProduits.ItemsSource = CreerListe();
+            dgProduits.ItemsSource = produits;
         }
 
 
-        private List<Produits> CreerListe()
+        // SI LISTE VIDE
+        //private List<Produits> CreerListe(string path)
+        //{
+        //    List<Produits> produits = new List<Produits>();
+
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Produits prod = new Produits(i, "Libelle" + i, "Catégorie " + i % 2, "rayon");
+        //        produits.Add(prod);
+        //    }
+        //    EcrireFichier(path, JsonConvert.SerializeObject(produits, Formatting.Indented)); 
+        //    return produits;
+        //}
+
+
+        private void EcrireFichier(string path, string tab)
         {
-            List<Produits> produits = new List<Produits>();
+            File.WriteAllText(path, tab);
+        }
 
-            for (int i = 0; i < 10; i++)
+        private string LireFichier()
+        // Renvoi un tableau de chaine contenant les informations stockées dans le fichier 
+        {
+            string chaine = "";
+            try
             {
-                Produits prod = new Produits(i, "Libelle" + i, "Catégorie " + i % 2, "rayon");
-                produits.Add(prod);
+                // Lecture et stockage dans chaine
+                chaine = File.ReadAllText(path);
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Une exception s'est produite : " + e.Message);
+                Console.WriteLine("Indiquer le path :");
+                path = Console.ReadLine();
+            }
+            return chaine;
+        }
 
+        private List<Produits> RecupDonnees()
+        {
+            string chaine = LireFichier();
+            List<Produits> produits = JsonConvert.DeserializeObject<List<Produits>>(chaine);
             return produits;
         }
 
 
-        //private void Resize()
-        //{
-        //                foreach (DataGridColumn colonne in dgProduits.Columns)
-        //    {
-        //        colonne.Width = 1;
-        //    }
-        //}
+
+
     }
 }

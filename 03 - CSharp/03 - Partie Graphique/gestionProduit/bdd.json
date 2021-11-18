@@ -1,0 +1,62 @@
+[
+  {
+    "IdProduit": 0,
+    "LibelleProduit": "TOTO",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 1,
+    "LibelleProduit": "Libelle1",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 2,
+    "LibelleProduit": "Libelle2",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 3,
+    "LibelleProduit": "Libelle3",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 4,
+    "LibelleProduit": "Libelle4",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 5,
+    "LibelleProduit": "Libelle5",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 6,
+    "LibelleProduit": "Libelle6",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 7,
+    "LibelleProduit": "Libelle7",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 8,
+    "LibelleProduit": "Libelle8",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": 9,
+    "LibelleProduit": "Libelle9",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  }
+]
