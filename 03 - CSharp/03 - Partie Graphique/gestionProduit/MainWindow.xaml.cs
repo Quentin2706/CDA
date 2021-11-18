@@ -73,8 +73,9 @@ namespace gestionProduit
             catch (Exception e)
             {
                 Console.WriteLine("Une exception s'est produite : " + e.Message);
-                Console.WriteLine("Indiquer le path :");
-                path = Console.ReadLine();
+                //Console.WriteLine("Indiquer le path :");
+                //path = Console.ReadLine();
+                Application.Current.Shutdown();
             }
             return chaine;
         }
@@ -86,8 +87,47 @@ namespace gestionProduit
             return produits;
         }
 
+        private void ButtonAction_Click(object sender, RoutedEventArgs e)
+        {
+            Produits p = new Produits();
+            if((string)((Button)sender).Content != "Ajouter")
+            {
+                p = (Produits) dgProduits.SelectedItem;
+            }
 
+            action action = new action((string)((Button)sender).Content, this, p);
+            this.Opacity = 0.7;
 
+            action.ShowDialog();
+            this.Opacity = 1;
 
+        }
+
+        public void RefreshDataGrid()
+        {
+            dgProduits.Items.Refresh();
+        }
+
+        public void AjouterProduit(Produits p)
+        {
+            produits.Add(p);
+            RefreshDataGrid();
+            EcrireFichier(path, JsonConvert.SerializeObject(produits, Formatting.Indented));
+        }
+
+        public void ModifierProduit(Produits p)
+        {
+            int index = produits.FindIndex(x => x.IdProduit == p.IdProduit);
+            produits[index] = p;
+            RefreshDataGrid();
+        }
+
+        public void SupprimerProduit(Produits p)
+        {
+            int index = produits.FindIndex(x => x.IdProduit == p.IdProduit);
+            produits.RemoveAt(index);
+            RefreshDataGrid();
+        }
+        
     }
 }

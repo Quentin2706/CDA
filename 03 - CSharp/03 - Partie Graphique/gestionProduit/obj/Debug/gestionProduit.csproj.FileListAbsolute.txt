@@ -16,3 +16,5 @@ U:\59011-07-01\03 - CSharp\03 - Partie Graphique\gestionProduit\obj\Debug\gestio
 U:\59011-07-01\03 - CSharp\03 - Partie Graphique\gestionProduit\obj\Debug\gestionProduit.csproj.CoreCompileInputs.cache
 U:\59011-07-01\03 - CSharp\03 - Partie Graphique\gestionProduit\obj\Debug\gestionProduit.exe
 U:\59011-07-01\03 - CSharp\03 - Partie Graphique\gestionProduit\obj\Debug\gestionProduit.pdb
+U:\59011-07-01\03 - CSharp\03 - Partie Graphique\gestionProduit\obj\Debug\action.g.cs
+U:\59011-07-01\03 - CSharp\03 - Partie Graphique\gestionProduit\obj\Debug\action.baml
