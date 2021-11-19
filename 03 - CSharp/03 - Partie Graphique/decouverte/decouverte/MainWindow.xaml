@@ -18,6 +18,8 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="40*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="40*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -31,23 +33,25 @@
             <ColumnDefinition Width="81*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="1" Grid.ColumnSpan="7" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" Text="TextBox" FontSize="22" Padding="10" />
-        <Button Content="1" FontSize="20" Grid.Column="1"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="2" FontSize="20" Grid.Column="3"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="3" FontSize="20" Grid.Column="5"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="4" FontSize="20" Grid.Column="1"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="5" FontSize="20" Grid.Column="3"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="6" FontSize="20" Grid.Column="5"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="7" FontSize="20" Grid.Column="1"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="8" FontSize="20" Grid.Column="3"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="9" FontSize="20" Grid.Column="5"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="0" FontSize="20" Grid.Column="3"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="+" FontSize="20" Grid.Column="7"  Grid.Row="7" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="-" FontSize="20" Grid.Column="7"  Grid.Row="5" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="/" FontSize="20" Grid.Column="5"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="*" FontSize="20" Grid.Column="7"  Grid.Row="3" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="=" FontSize="20" Grid.Column="7"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
-        <Button Content="." FontSize="20" Grid.Column="1"  Grid.Row="9" Cursor="Hand" Background="#FFA2A2A2" BorderBrush="#FFA2A2A2" Foreground="White"/>
+        <TextBox x:Name="tbx_aff" Grid.Column="1" Grid.ColumnSpan="7" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.Row="1" FontSize="22" Padding="10" IsReadOnly="True" />
+        <Button x:Name="btn_CE" Content="CE" FontSize="20" Grid.Column="1"  Grid.Row="3" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Grid.ColumnSpan="3" Click="BtnCE_Click"/>
+        <Button x:Name="btn_C" Content="C" FontSize="20" Grid.Column="5"  Grid.Row="3" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Grid.ColumnSpan="3" Click="BtnC_Click"/>
+        <Button x:Name="btn_1" Content="1" FontSize="20" Grid.Column="1"  Grid.Row="9" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_2" Content="2" FontSize="20" Grid.Column="3"  Grid.Row="9" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_3" Content="3" FontSize="20" Grid.Column="5"  Grid.Row="9" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_4" Content="4" FontSize="20" Grid.Column="1"  Grid.Row="7" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_5" Content="5" FontSize="20" Grid.Column="3"  Grid.Row="7" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_6" Content="6" FontSize="20" Grid.Column="5"  Grid.Row="7" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_7" Content="7" FontSize="20" Grid.Column="1"  Grid.Row="5" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_8" Content="8" FontSize="20" Grid.Column="3"  Grid.Row="5" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_9" Content="9" FontSize="20" Grid.Column="5"  Grid.Row="5" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btn_0" Content="0" FontSize="20" Grid.Column="3"  Grid.Row="11" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnNum_Click"/>
+        <Button x:Name="btnPlus" Content="+" FontSize="20" Grid.Column="7"  Grid.Row="9" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnOP_Click"/>
+        <Button x:Name="btnMoins" Content="-" FontSize="20" Grid.Column="7"  Grid.Row="7" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnOP_Click"/>
+        <Button x:Name="btnDiv" Content="/" FontSize="20" Grid.Column="5"  Grid.Row="11" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnOP_Click"/>
+        <Button x:Name="btnMultip" Content="*" FontSize="20" Grid.Column="7"  Grid.Row="5" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnOP_Click"/>
+        <Button x:Name="btnEgal" Content="=" FontSize="20" Grid.Column="7"  Grid.Row="11" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnResult_Click"/>
+        <Button x:Name="btnPoint" Content="," FontSize="20" Grid.Column="1"  Grid.Row="11" Cursor="Hand" Background="{DynamicResource BcgColor}" BorderBrush="{DynamicResource BorderBrushBtn}" Foreground="{DynamicResource FrgColor}" Click="BtnVir_Click"/>
 
     </Grid>
 </Window>

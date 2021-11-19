@@ -1,0 +1,134 @@
+[
+  {
+    "IdProduit": "0",
+    "LibelleProduit": "TOTO",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "1",
+    "LibelleProduit": "Libelle1",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "2",
+    "LibelleProduit": "Libelle2",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "3",
+    "LibelleProduit": "Libelle3",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "4",
+    "LibelleProduit": "Libelle4",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "5",
+    "LibelleProduit": "Libelle5",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "6",
+    "LibelleProduit": "Libelle6",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "7",
+    "LibelleProduit": "Libelle7",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "8",
+    "LibelleProduit": "Libelle8",
+    "Categorie": "Catégorie 0",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "9",
+    "LibelleProduit": "Libelle9",
+    "Categorie": "Catégorie 1",
+    "Rayon": "rayon"
+  },
+  {
+    "IdProduit": "10",
+    "LibelleProduit": "dzada",
+    "Categorie": "dzadza",
+    "Rayon": "10"
+  },
+  {
+    "IdProduit": "12",
+    "LibelleProduit": "cscqs",
+    "Categorie": "csqcqs",
+    "Rayon": "12"
+  },
+  {
+    "IdProduit": "dqs",
+    "LibelleProduit": "dsqdqsd",
+    "Categorie": "dsqdsqdqs",
+    "Rayon": "dqs"
+  },
+  {
+    "IdProduit": "dqsdq",
+    "LibelleProduit": "dsqdqs",
+    "Categorie": "dsqdqq",
+    "Rayon": "dqsdq"
+  },
+  {
+    "IdProduit": "dqsdq",
+    "LibelleProduit": "dsqdsq",
+    "Categorie": "dsqdq",
+    "Rayon": "dqsdq"
+  },
+  {
+    "IdProduit": "dqsdsq",
+    "LibelleProduit": "sdqdqs",
+    "Categorie": "dsqdqsq",
+    "Rayon": "dqsdsq"
+  },
+  {
+    "IdProduit": "dddddddddddddddd",
+    "LibelleProduit": "dddddddddddddddd",
+    "Categorie": "dddddddddddddddd",
+    "Rayon": "dddddddddddddddd"
+  },
+  {
+    "IdProduit": "cccccccccccc",
+    "LibelleProduit": "cccccccccccc",
+    "Categorie": "cccccccccccc",
+    "Rayon": "cccccccccccc"
+  },
+  {
+    "IdProduit": "dzzzzzzzzzzzzzzzzzz",
+    "LibelleProduit": "zzzzzzzzzzzzzzz",
+    "Categorie": "zzzzzzzzzzzzzzzz",
+    "Rayon": "dzzzzzzzzzzzzzzzzzz"
+  },
+  {
+    "IdProduit": "dzadza",
+    "LibelleProduit": "dzadza",
+    "Categorie": "dzadazd",
+    "Rayon": "dzadza"
+  },
+  {
+    "IdProduit": "fef",
+    "LibelleProduit": "fezfe",
+    "Categorie": "fezfze",
+    "Rayon": "fef"
+  },
+  {
+    "IdProduit": "grege",
+    "LibelleProduit": "grege",
+    "Categorie": "grege",
+    "Rayon": "grege"
+  }
+]

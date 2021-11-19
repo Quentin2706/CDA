@@ -1,0 +1,32 @@
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\nomFichier.exe
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\nomFichier.deps.json
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\nomFichier.runtimeconfig.json
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\nomFichier.runtimeconfig.dev.json
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\nomFichier.dll
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\ref\nomFichier.dll
+C:\Users\59011-07-01\source\repos\nomFichier\bin\Debug\net5.0\nomFichier.pdb
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.csproj.AssemblyReference.cache
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.AssemblyInfoInputs.cache
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.AssemblyInfo.cs
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.csproj.CoreCompileInputs.cache
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.dll
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\ref\nomFichier.dll
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.pdb
+C:\Users\59011-07-01\source\repos\nomFichier\obj\Debug\net5.0\nomFichier.genruntimeconfig.cache
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\nomFichier.exe
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\nomFichier.deps.json
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\nomFichier.runtimeconfig.json
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\nomFichier.runtimeconfig.dev.json
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\nomFichier.dll
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\ref\nomFichier.dll
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\bin\Debug\net5.0\nomFichier.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.csproj.AssemblyReference.cache
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.AssemblyInfoInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.AssemblyInfo.cs
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.csproj.CoreCompileInputs.cache
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.dll
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\ref\nomFichier.dll
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.pdb
+U:\59011-07-01\03 - CSharp\02 - POO\nomFichier\obj\Debug\net5.0\nomFichier.genruntimeconfig.cache

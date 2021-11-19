@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:decouverte"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="BcgColor" Color="#FFA2A2A2"/>
+        <SolidColorBrush x:Key="BorderBrushBtn" Color="#FFA2A2A2"/>
+        <SolidColorBrush x:Key="FrgColor" Color="White"/>
     </Application.Resources>
 </Application>
