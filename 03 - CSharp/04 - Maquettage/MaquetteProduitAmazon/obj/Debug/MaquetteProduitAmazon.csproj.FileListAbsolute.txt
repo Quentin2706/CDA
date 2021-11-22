@@ -1,0 +1,15 @@
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\bin\Debug\MaquetteProduitAmazon.exe.config
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\bin\Debug\MaquetteProduitAmazon.exe
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\bin\Debug\MaquetteProduitAmazon.pdb
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MainWindow.g.cs
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\App.g.cs
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon_MarkupCompile.cache
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon_MarkupCompile.lref
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MainWindow.baml
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.g.resources
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.Properties.Resources.resources
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.csproj.GenerateResource.cache
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.csproj.CoreCompileInputs.cache
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.exe
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.pdb
+U:\59011-07-01\03 - CSharp\04 - Maquettage\MaquetteProduitAmazon\obj\Debug\MaquetteProduitAmazon.csproj.AssemblyReference.cache

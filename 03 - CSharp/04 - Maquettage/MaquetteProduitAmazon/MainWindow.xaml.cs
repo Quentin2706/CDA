@@ -24,5 +24,6 @@ namespace MaquetteProduitAmazon
         {
             InitializeComponent();
         }
+
     }
 }
