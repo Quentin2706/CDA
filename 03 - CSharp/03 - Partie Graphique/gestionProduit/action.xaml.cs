@@ -52,6 +52,10 @@ namespace gestionProduit
                     tbxLibelleProduit.Text = this.produit.LibelleProduit;
                     tbxCategorie.Text = this.produit.Categorie;
                     tbxRayon.Text = this.produit.Rayon;
+                    tbxIdProduit.IsEnabled = false;
+                    tbxLibelleProduit.IsEnabled = false;
+                    tbxCategorie.IsEnabled = false;
+                    tbxRayon.IsEnabled = false;
                     break;
                 default:
                     break;
@@ -68,7 +72,6 @@ namespace gestionProduit
         private void btnAction_Click(object sender, RoutedEventArgs e)
         {
 
-
             switch (actionARealiser)
             {
                 case "Ajouter":
@@ -77,7 +80,6 @@ namespace gestionProduit
                     produit.Categorie = tbxCategorie.Text;
                     produit.Rayon = tbxRayon.Text;
                     this.laWindow.AjouterProduit(this.produit);
-                    btnRetour_Click(sender, e);
                     break;
                 case "Modifier":
                     produit.IdProduit = tbxIdProduit.Text;
@@ -86,23 +88,21 @@ namespace gestionProduit
                     produit.Rayon = tbxRayon.Text;
 
                     this.laWindow.ModifierProduit(this.produit);
-                    btnRetour_Click(sender, e);
-                    break;
+                    this.Close();                    break;
                 case "Supprimer":
                     tbxIdProduit.Text = this.produit.IdProduit;
                     tbxLibelleProduit.Text = this.produit.LibelleProduit;
                     tbxCategorie.Text = this.produit.Categorie;
                     tbxRayon.Text = this.produit.Rayon;
-                    tbxIdProduit.IsEnabled = false;
-                    tbxLibelleProduit.IsEnabled = false;
-                    tbxCategorie.IsEnabled = false;
-                    tbxRayon.IsEnabled = false;
+                    
 
                     this.laWindow.SupprimerProduit(this.produit);
                     break;
                 default:
                     break;
+
             }
+            this.Close();
         }
     }
 }

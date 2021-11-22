@@ -35,7 +35,7 @@
         <Button Content="Supprimer" Grid.Column="5" Grid.ColumnSpan="3" Background="{DynamicResource BcgBtn}" Click="ButtonAction_Click"/>
         <Button Content="Dupliquer" Grid.Column="9"  Background="{DynamicResource BcgBtn}" />
         <Button Content="Vider" Grid.Column="11"  Background="{DynamicResource BcgBtn}" />
-        <DataGrid x:Name="dgProduits" Grid.ColumnSpan="11" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid x:Name="dgProduits" Grid.ColumnSpan="11" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="1"/>

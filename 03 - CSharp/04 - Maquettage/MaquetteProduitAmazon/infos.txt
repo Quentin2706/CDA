@@ -1,0 +1,26 @@
+Type de produit => Select 
+Image : 
+Marque => TextBox "toto"
+Prix TTC => TextBOx 10.1
+
+Usage =>  TextBOx Pro ou particulier
+
+Fréquence Rafrachissement => Textbox 60
+
+taille 
+séries
+couleur
+Résolution 
+Interface matérielle
+type connecteur
+tech. affichage IPS
+résolution affichage max 1080
+dimensions
+
+Quantité
+
+A propos => rich text box
+Mots clés => textbox séparé par ;
+Date de mise en vente : 
+
+
