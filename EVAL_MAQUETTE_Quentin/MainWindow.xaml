@@ -16,17 +16,17 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="100*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="28*"/>
-            <RowDefinition Height="150*"/>
-            <RowDefinition Height="33*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="155*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="174*"/>
             <RowDefinition Height="28*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
         <!--Row 1 -->
@@ -140,7 +140,7 @@
         </Grid>
 
         <!-- Row 3 -->
-        <Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Content="Données composant la fiche de paie" Background="{DynamicResource grand titre}" Margin="0,4,0,3"/>
+        <Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Content="Données composant la fiche de paie" Background="{DynamicResource grand titre}"/>
 
         <!-- Row 4 -->
 
@@ -215,19 +215,29 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="1" Text="Base" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Column="2" Text="Taux" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Column="3"  Text="A payer" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock Grid.Column="4"  Text="A retenir" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="Base en (heure)" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Text="Taux en %" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="3"  Text="A payer en €" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="4"  Text="A retenir en €" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Salaire de base" Grid.Row="1" Panel.ZIndex="1" VerticalAlignment="Center"/>
+                    <TextBlock Text="Prime Ancienneté" Grid.Row="2" VerticalAlignment="Center"/>
+                    <TextBlock Text="Salaire brut" Grid.Row="3" Panel.ZIndex="1" VerticalAlignment="Center"/>
+                    <TextBlock Text="Cotisation CNSS" Grid.Row="4" VerticalAlignment="Center"/>
+                    <TextBlock Text="AMO" Grid.Row="5" Panel.ZIndex="1" VerticalAlignment="Center"/>
+                    <TextBlock Text="IGR" Grid.Row="6" VerticalAlignment="Center"/>
+                    <TextBlock Text="Mutuelle" Grid.Row="7" Panel.ZIndex="1" VerticalAlignment="Center"/>
+                    <TextBlock Text="Net à payer" Grid.Row="8" VerticalAlignment="Center"/>
+
 
                     <!-- Style pour le tableau pour le salaire -->
-                    <Border BorderBrush="Black" BorderThickness="0,1" Grid.Row="1" Grid.ColumnSpan="5"/>
+                    <Border BorderBrush="Black" BorderThickness="0,1" Grid.Row="1" Grid.ColumnSpan="5" Background="{DynamicResource lignePaireSalaireSimu}" />
                     <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="2" Grid.ColumnSpan="5"/>
-                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="3" Grid.ColumnSpan="5"/>
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="3" Grid.ColumnSpan="5" Background="{DynamicResource lignePaireSalaireSimu}"/>
                     <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="4" Grid.ColumnSpan="5"/>
-                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="5" Grid.ColumnSpan="5"/>
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="5" Grid.ColumnSpan="5" Background="{DynamicResource lignePaireSalaireSimu}"/>
                     <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="6" Grid.ColumnSpan="5"/>
-                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="7" Grid.ColumnSpan="5"/>
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Row="7" Grid.ColumnSpan="5" Background="{DynamicResource lignePaireSalaireSimu}"/>
                     <Border BorderBrush="Black" BorderThickness="1,0" Grid.Column="1" Grid.RowSpan="9"/>
                     <Border BorderBrush="Black" BorderThickness="0,0,1,0" Grid.Column="2" Grid.RowSpan="9"/>
                     <Border BorderBrush="Black"  BorderThickness="0,0,1,0" Grid.Column="3" Grid.RowSpan="9"/>
@@ -238,30 +248,40 @@
                     <TextBlock Text="7000,00" Grid.Row="1"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="" Grid.Row="1"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                    <TextBlock Text="191" Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="36,65" Grid.Row="2"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="7000" Grid.Row="2"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="10" Grid.Row="2"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="700,00" Grid.Row="2"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="" Grid.Row="2"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                    <TextBlock Text="191" Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="36,65" Grid.Row="1"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="7000,00" Grid.Row="1"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="" Grid.Row="1"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="3"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="3"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="7700,00" Grid.Row="3"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="3"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+                    <TextBlock Text="7000" Grid.Row="4"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="4,48" Grid.Row="4"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="4"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="313,60" Grid.Row="4"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+                    <TextBlock Text="7000" Grid.Row="5"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="2,26" Grid.Row="5"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="5"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="158,20" Grid.Row="5"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+                    <TextBlock Text="7000" Grid.Row="6"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="20" Grid.Row="6"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="6"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="1400,00" Grid.Row="6"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+                    <TextBlock Text="20" Grid.Row="7"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="100" Grid.Row="7"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="7"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="20,00" Grid.Row="7"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-
-                    <TextBlock Text="Prime Ancienneté" Grid.Row="2"/>
-                    <TextBlock Text="Salaire brut" Grid.Row="3"/>
-                    <TextBlock Text="Cotisation CNSS" Grid.Row="4"/>
-                    <TextBlock Text="AMO" Grid.Row="5"/>
-                    <TextBlock Text="IGR" Grid.Row="6"/>
-                    <TextBlock Text="Mutuelle" Grid.Row="7"/>
-                    <TextBlock Text="Net à payer" Grid.Row="8"/>
-
-
+                    <TextBlock Text="" Grid.Row="8"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="8"  Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="5808,20" Grid.Row="8"  Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="" Grid.Row="8"  Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
             </Border>
 
@@ -308,7 +328,7 @@
 
 
         <!-- Row 5 -->
-        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid Grid.Row="5" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>

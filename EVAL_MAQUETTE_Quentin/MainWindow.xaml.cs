@@ -24,5 +24,6 @@ namespace EVAL_MAQUETTE_Quentin
         {
             InitializeComponent();
         }
+
     }
 }

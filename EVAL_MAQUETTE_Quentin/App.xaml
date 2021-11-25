@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:EVAL_MAQUETTE_Quentin"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <SolidColorBrush x:Key="lignePaireSalaireSimu" Color="#FFD8D8D8"/>
+
     </Application.Resources>
 </Application>
