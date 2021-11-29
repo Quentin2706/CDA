@@ -1,5 +1,6 @@
 ﻿using ApiVilles;
 using APIVilles.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,24 +40,15 @@ namespace APIVilles.Data.Services
 
         public IEnumerable<Departement> GetAllDepartements()
         {
-            var liste = (from e1 in _context.Villes
-                         join e2 in _context.Departements
-                         on e1.IdDepartement equals e2.IdDepartement
-                         select new Departement
-                         {
-                             IdDepartement = e1.IdDepartement,
-                             Nom = e1.Nom,
-                             LesVilles = (from e3 in _context.Villes
-                                          join e4 in _context.Departements
-                                          on e3.IdDepartement equals e4.IdDepartement
-                                          select new Ville {
-                                              IdVille = e3.IdVille,
-                                              Nom = e3.Nom,
-                                              IdDepartement = e1.IdDepartement,
-                                              Dept = e4
-                                          }).ToList()
-                         }).ToList();
-            return liste;
+            //var liste = (from e1 in _context.Departements
+            //             select new Departement
+            //             {
+            //                 IdDepartement = e1.IdDepartement,
+            //                 Nom = e1.Nom,
+            //                 LesVilles = _context.Villes.Where(v => v.IdDepartement == e1.IdDepartement).ToList()
+            //             }).ToList();
+            //return liste;
+            return _context.Departements.Include("LesVilles").ToList();
         }
 
         public Departement GetDepartementById(int id)

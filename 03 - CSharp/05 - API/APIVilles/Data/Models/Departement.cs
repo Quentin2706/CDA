@@ -12,6 +12,6 @@ namespace APIVilles.Data.Models
         public int IdDepartement { get; set; }
         public string Nom { get; set; }
 
-        public ICollection<Ville> LesVilles { get; set; }
+        public List<Ville> LesVilles { get; set; }
     }
 }

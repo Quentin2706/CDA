@@ -17,5 +17,22 @@ namespace APIVilles.Data
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            //modelBuilder.Entity<Ville>(e1 =>
+            //{
+            //    e1.ToTable("villes");
+            //    //e1.Property(e => e.IdDepartement).HasColumnName("idDepartement");
+            //    e1.HasOne<Departement>(e => e.Dept).WithOne().HasForeignKey<Departement>(e => e.IdDepartement);
+            //});
+
+            modelBuilder.Entity<Ville>()
+           .HasOne<Departement>(s => s.Dept)
+           .WithMany(d => d.LesVilles)
+           .HasForeignKey(s => s.IdDepartement);
+
+        }
     }
 }

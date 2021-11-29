@@ -50,6 +50,7 @@ namespace APIVilles.Data.Services
                              IdDepartement = e2.IdDepartement,
                              Dept = e2
                          }).ToList();
+            liste[0].Dump();
             return liste;
             // return _context.Villes.ToList();
         }
