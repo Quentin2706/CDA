@@ -8,5 +8,7 @@ namespace APIVilles.Data.Dtos
     public class DepartementsDTO
     {
         public string Nom { get; set; }
+
+        public ICollection<VillesDTO> LesVilles { get; set; }
     }
 }

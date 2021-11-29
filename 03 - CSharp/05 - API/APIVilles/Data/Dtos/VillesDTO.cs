@@ -8,6 +8,8 @@ namespace APIVilles.Data.Dtos
     public class VillesDTO
     {
         public string Nom { get; set; }
-        public DepartementsDTO departement { get; set; }
+
+        public int IdDepartement { get; set; }
+        public DepartementsDTO Dept { get; set; }
     }
 }

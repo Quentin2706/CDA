@@ -48,7 +48,7 @@ namespace APIVilles.Data.Services
                              IdVille = e1.IdVille,
                              Nom = e1.Nom,
                              IdDepartement = e2.IdDepartement,
-                             Departement = e2
+                             Dept = e2
                          }).ToList();
             return liste;
             // return _context.Villes.ToList();
@@ -65,7 +65,7 @@ namespace APIVilles.Data.Services
                               IdVille = e1.IdVille,
                               Nom = e1.Nom,
                               IdDepartement = e2.IdDepartement,
-                              Departement = e2
+                              Dept = e2
                           });
             return result.FirstOrDefault();
         }

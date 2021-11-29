@@ -14,6 +14,6 @@ namespace APIVilles.Data.Models
 
         public int IdDepartement { get; set; }
 
-        public Departement Departement { get; set; }
+        public Departement Dept { get; set; }
     }
 }
