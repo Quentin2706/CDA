@@ -27,30 +27,31 @@ namespace APIVilles.Controllers
 
         //GET api/Villes
         [HttpGet]
-        public ActionResult<IEnumerable<VillesDTO>> GetAllVilles()
+        public ActionResult<IEnumerable<VillesDTOListe>> GetAllVilles()
         {
             IEnumerable<Ville> listeVilles = _service.GetAllVilles();
-            return Ok(_mapper.Map<IEnumerable<VillesDTO>>(listeVilles));
+            return Ok(_mapper.Map<IEnumerable<VillesDTOListe>>(listeVilles));
         }
 
         //GET api/Villes/{i}
         [HttpGet("{id}", Name = "GetVilleById")]
-        public ActionResult<VillesDTO> GetVilleById(int id)
+        public ActionResult<VillesDTOListe> GetVilleById(int id)
         {
             Ville commandItem = _service.GetVilleById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<VillesDTO>(commandItem));
+                return Ok(_mapper.Map<VillesDTOListe>(commandItem));
             }
             return NotFound();
         }
 
         //POST api/Villes
         [HttpPost]
-        public ActionResult<VillesDTO> CreateVille(Ville obj)
+        public ActionResult<VillesDTO> CreateVille(VillesDTOIn obj)
         {
             _service.AddVille(obj);
-            return CreatedAtRoute(nameof(GetVilleById), new { Id = obj.IdVille }, obj);
+            //return CreatedAtRoute(nameof(GetVilleById), new { Id = obj.IdVille }, obj);
+            return NoContent();
         }
 
         //POST api/Villes/{id}

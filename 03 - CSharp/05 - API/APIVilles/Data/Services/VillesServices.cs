@@ -1,4 +1,5 @@
 ﻿using ApiVilles;
+using APIVilles.Data.Dtos;
 using APIVilles.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,13 +19,19 @@ namespace APIVilles.Data.Services
             _context = context;
         }
 
-        public void AddVille(Ville obj)
+        public void AddVille(VillesDTOIn obj)
         {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.Villes.Add(obj);
+
+            var ent = new Ville()
+            {
+                Nom = obj.Nom,
+                IdDepartement = obj.IdDepartement,
+            };
+            _context.Villes.Add(ent);
             _context.SaveChanges();
         }
 
@@ -50,9 +57,7 @@ namespace APIVilles.Data.Services
                              IdDepartement = e2.IdDepartement,
                              Dept = e2
                          }).ToList();
-            liste[0].Dump();
             return liste;
-            // return _context.Villes.ToList();
         }
 
         public Ville GetVilleById(int id)

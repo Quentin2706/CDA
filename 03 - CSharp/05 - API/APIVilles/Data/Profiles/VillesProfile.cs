@@ -16,6 +16,8 @@ namespace APIVilles.Data.Profiles
             CreateMap<VillesDTO, Ville>();
             CreateMap<Ville, VillesDTOListe>();
             CreateMap<VillesDTOListe, Ville>();
+            CreateMap<Ville, VillesDTOIn>();
+            CreateMap<VillesDTOIn, Ville>();
         }
     }
 }

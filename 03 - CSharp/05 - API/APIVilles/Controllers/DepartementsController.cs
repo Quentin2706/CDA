@@ -47,15 +47,16 @@ namespace APIVilles.Controllers
 
         //POST api/Departements
         [HttpPost]
-        public ActionResult<DepartementsDTO> CreateDepartement(Departement obj)
+        public ActionResult CreateDepartement(DepartementsDTOIn obj)
         {
             _service.AddDepartement(obj);
-            return CreatedAtRoute(nameof(GetDepartementById), new { Id = obj.IdDepartement }, obj);
+            return NoContent();
+            // return CreatedAtRoute(nameof(GetDepartementById), new { Id = obj.IdDepartement }, obj);
         }
 
         //POST api/Departements/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateDepartement(int id, DepartementsDTO obj)
+        public ActionResult UpdateDepartement(int id, DepartementsDTOUpdate obj)
         {
             Departement objFromRepo = _service.GetDepartementById(id);
             if (objFromRepo == null)

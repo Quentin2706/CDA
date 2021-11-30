@@ -14,7 +14,12 @@ namespace APIVilles.Data.Profiles
         {
             CreateMap<Departement, DepartementsDTO>();
             CreateMap<DepartementsDTO, Departement>();
-
+            CreateMap<Departement, DepartementsDTOListe>();
+            CreateMap<DepartementsDTOListe, Departement>();
+            CreateMap<Departement, DepartementsDTOIn>();
+            CreateMap<DepartementsDTOIn, Departement>();
+            CreateMap<Departement, DepartementsDTOUpdate>();
+            CreateMap<DepartementsDTOUpdate, Departement>();
         }
     }
 }

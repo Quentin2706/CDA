@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace APIVilles.Data.Dtos
 {
-    public class VillesDTO
+    public class DepartementsDTOIn
     {
         public string Nom { get; set; }
 

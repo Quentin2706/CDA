@@ -1,4 +1,5 @@
 ﻿using ApiVilles;
+using APIVilles.Data.Dtos;
 using APIVilles.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,13 +19,17 @@ namespace APIVilles.Data.Services
             _context = context;
         }
 
-        public void AddDepartement(Departement obj)
+        public void AddDepartement(DepartementsDTOIn obj)
         {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.Departements.Add(obj);
+            var ent = new Departement()
+            {
+                Nom = obj.Nom,
+            };
+            _context.Add(ent);
             _context.SaveChanges();
         }
 
@@ -48,16 +53,17 @@ namespace APIVilles.Data.Services
             //                 LesVilles = _context.Villes.Where(v => v.IdDepartement == e1.IdDepartement).ToList()
             //             }).ToList();
             //return liste;
-            return _context.Departements.Include("LesVilles").ToList();
+           return _context.Departements.Include("LesVilles").ToList();
         }
 
         public Departement GetDepartementById(int id)
         {
-            return _context.Departements.FirstOrDefault(obj => obj.IdDepartement == id);
+            return _context.Departements.Include("LesVilles").FirstOrDefault(obj => obj.IdDepartement == id);
         }
 
         public void UpdateDepartement(Departement obj)
         {
+            _context.Update(obj);
             _context.SaveChanges();
         }
 

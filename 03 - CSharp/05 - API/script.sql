@@ -1,0 +1,37 @@
+DROP DATABASE IF EXISTS aeroport;
+CREATE DATABASE aeroport  DEFAULT CHARACTER SET utf8;;
+use aeroport;
+
+CREATE TABLE Pilotes(
+   IdPilote INT AUTO_INCREMENT PRIMARY KEY,
+   Nom VARCHAR(100),
+   Prenom VARCHAR(100)
+)ENGINE=InnoDB;
+
+CREATE TABLE Trajets(
+   IdTrajet INT AUTO_INCREMENT PRIMARY KEY,
+   AeroportArrivee VARCHAR(200),
+   AeroportDepart VARCHAR(200),
+   DureeVol TIME
+)ENGINE=InnoDB;
+
+CREATE TABLE Avions(
+   IdAvion INT AUTO_INCREMENT PRIMARY KEY,
+   Compagnie VARCHAR(200),
+   Type VARCHAR(50)
+)ENGINE=InnoDB;
+
+CREATE TABLE Vols(
+   IdVol INT AUTO_INCREMENT PRIMARY KEY,
+   IdPilote INT,
+   IdTrajet INT,
+   IdAvion INT,
+   DateVol DATETIME,
+   
+   FOREIGN KEY(IdTrajet) REFERENCES Trajets(IdTrajet),
+   FOREIGN KEY(IdAvion) REFERENCES Avions(IdAvion)
+)ENGINE=InnoDB;
+
+ALTER TABLE Vols ADD CONSTRAINT FK_Vols_Pilotes FOREIGN KEY (IdPilote) REFERENCES Pilotes(IdPilote);
+ALTER TABLE Vols ADD CONSTRAINT FK_Vols_Avions FOREIGN KEY (IdAvion) REFERENCES Avions(IdAvion);
+ALTER TABLE Vols ADD CONSTRAINT FK_Vols_Trajets FOREIGN KEY (IdTrajet) REFERENCES Trajets(IdTrajet);
