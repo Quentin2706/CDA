@@ -39,12 +39,12 @@ namespace APIGestionCommande.Data.Services
 
         public IEnumerable<Preparation> GetAllPreparation()
         {
-            return _context.Preparations.ToList();
+            return _context.Preparations.Include("Produit").Include("Commande").ToList();
         }
 
         public Preparation GetPreparationById(int id)
         {
-            return _context.Preparations.FirstOrDefault(obj => obj.IdPreparation == id);
+            return _context.Preparations.Include("Produit").Include("Commande").FirstOrDefault(obj => obj.IdPreparation == id);
         }
 
         public void UpdatePreparation(Preparation obj)
