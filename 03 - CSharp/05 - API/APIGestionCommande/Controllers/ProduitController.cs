@@ -27,7 +27,7 @@ namespace APIGestionCommande.Controllers
 
         //GET api/Produit
         [HttpGet]
-        public ActionResult<IEnumerable<ProduitDTO>> GetAllProduit()
+        public ActionResult<IEnumerable<ProduitPreparationDTO>> GetAllProduit()
         {
             IEnumerable<Produit> listeProduit = _service.GetAllProduit();
             return Ok(_mapper.Map<IEnumerable<ProduitPreparationDTO>>(listeProduit));

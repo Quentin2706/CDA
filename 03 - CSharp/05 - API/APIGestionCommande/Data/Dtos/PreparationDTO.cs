@@ -19,4 +19,28 @@ namespace APIGestionCommande.Data.Dtos
         public virtual CommandeDTO Commande { get; set; }
         public virtual ProduitDTO Produit { get; set; }
     }
+
+    public partial class PreparationProduitDTO
+    {
+        //public PreparationProduitDTO()
+        //{
+        //    Produit = new HashSet<ProduitDTO>();
+        //}
+
+        public DateTime DatePreparation { get; set; }
+        public virtual ProduitDTO Produit { get; set; }
+    }
+
+    public partial class PreparationCommandeDTO
+    {
+        //public PreparationProduitDTO()
+        //{
+        //    Produit = new HashSet<ProduitDTO>();
+        //}
+
+        public DateTime DatePreparation { get; set; }
+        public virtual CommandeDTO Commande { get; set; }
+    }
+
+
 }

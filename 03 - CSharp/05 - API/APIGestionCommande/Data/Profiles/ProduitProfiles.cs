@@ -14,6 +14,7 @@ namespace APIGestionCommande.Data.Profiles
         {
             CreateMap<Produit, ProduitDTO>();
             CreateMap<ProduitDTO, Produit>();
+
             CreateMap<Produit, ProduitPreparationDTO>();
             CreateMap<ProduitPreparationDTO, Produit>();
 

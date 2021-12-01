@@ -10,10 +10,17 @@ namespace APIGestionCommande.Data.Dtos
         public DateTime DateCommande { get; set; }
         public int NumeroCommande { get; set; }
 
-        
     }
+
+
+    public class CommandeProduitDTO : CommandeDTO
+    {
+        public virtual ICollection<ProduitDTO> Produit { get; set; }
+    }
+
+
     public partial class CommandePreparationDTO : CommandeDTO
         {
-            public virtual ICollection<PreparationDTO> Preparations { get; set; }
+            public virtual ICollection<PreparationProduitDTO> Preparations { get; set; }
         }
 }

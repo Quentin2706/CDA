@@ -39,12 +39,12 @@ namespace APIGestionCommande.Data.Services
 
         public IEnumerable<Commande> GetAllCommande()
         {
-            return _context.Commandes.Include("Preparations").ToList();
+            return _context.Commandes.Include("Preparations.Produit").ToList();
         }
 
         public Commande GetCommandeById(int id)
         {
-            return _context.Commandes.Include("Preparations").FirstOrDefault(obj => obj.IdCommande == id);
+            return _context.Commandes.Include("Preparations.Produit").FirstOrDefault(obj => obj.IdCommande == id);
         }
 
         public void UpdateCommande(Commande obj)

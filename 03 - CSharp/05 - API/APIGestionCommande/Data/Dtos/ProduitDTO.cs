@@ -15,6 +15,11 @@ namespace APIGestionCommande.Data.Dtos
     }
     public partial class ProduitPreparationDTO : ProduitDTO
     {
-        public virtual ICollection<PreparationDTO> Preparations { get; set; }
+        public ProduitPreparationDTO()
+        {
+            Preparations = new HashSet<PreparationCommandeDTO>();
+        }
+
+        public virtual ICollection<PreparationCommandeDTO> Preparations { get; set; }
     }
 }

@@ -14,8 +14,12 @@ namespace APIGestionCommande.Data.Profiles
         {
             CreateMap<Commande, CommandeDTO>();
             CreateMap<CommandeDTO, Commande>();
+
             CreateMap<Commande, CommandePreparationDTO>();
             CreateMap<CommandePreparationDTO, Commande>();
+
+            CreateMap<Commande, CommandeProduitDTO>();
+            CreateMap<CommandeProduitDTO, Commande>();
 
         }
 
