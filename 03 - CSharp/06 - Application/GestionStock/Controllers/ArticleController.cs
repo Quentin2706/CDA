@@ -2,6 +2,7 @@
 using GestionStock.Data;
 using GestionStock.Data.Dtos;
 using GestionStock.Data.Models;
+using GestionStock.Data.Profiles;
 using GestionStock.Data.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -19,16 +20,14 @@ namespace GestionStock.Controllers
         private readonly ArticleServices _service;
         private readonly IMapper _mapper;
 
-        public ArticleController(ArticleServices service, IMapper mapper)
+        public ArticleController(GestionStockContext _context)
         {
-            _service = service;
-            _mapper = mapper;
-        }
-
-        public ArticleController(GestionStockContext ctx, IMapper mapper)
-        {
-            _service = new ArticleServices(ctx);
-            _mapper = mapper;
+            _service = new ArticleServices(_context);
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<ArticleProfile>();
+            });
+            _mapper = config.CreateMapper();
         }
 
         //GET api/Article

@@ -22,7 +22,10 @@ namespace test.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
+
+
+
+          if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseMySQL("server=localhost;user=root;database=gestionvoitures;ssl mode=none");
             }

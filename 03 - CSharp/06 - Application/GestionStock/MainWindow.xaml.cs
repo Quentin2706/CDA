@@ -27,9 +27,8 @@ namespace GestionStock
         {
             InitializeComponent();
             GestionStockContext _ctx = new GestionStockContext();
-            Mapper _mapper = new Mapper();
-            ArticleController articleController = new ArticleController(_ctx, _mapper);
-            dg.ItemsSource = _ctx.Articles.ToList();
+            ArticleController articleController = new ArticleController(_ctx);
+            dg.ItemsSource = articleController.GetAllArticle();
         }
     }
 }
