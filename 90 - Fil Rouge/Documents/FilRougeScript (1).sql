@@ -134,7 +134,7 @@ CREATE TABLE Adresses(
    emailAdresse VARCHAR(150)  NOT NULL,
    telMobile VARCHAR(12)  NOT NULL,
    telFixe VARCHAR(12) ,
-   adresse VARCHAR(50)  NOT NULL,
+   adressePostale VARCHAR(50)  NOT NULL,
    province VARCHAR(50) ,
    complementAdresse VARCHAR(50) ,
    IdVille INT NOT NULL
