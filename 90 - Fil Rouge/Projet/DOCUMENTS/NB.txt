@@ -1,8 +1,0 @@
-Front-Office (partie publique du site)
-– Consultation du catalogue / Ajout des produits dans le panier
-– Inscription d'un nouvel utilisateur sur le site (pour les particuliers)
-– Connexion/Deconnexion d'un utilisateur pour accéder à son profil
-– Validation du panier pour créer une nouvelle commande
-• Back-Office (réservé à l'administrateur)
-– Ajout/Suppression de produit dans le panier
-– Visualisation des anciennes commandes
