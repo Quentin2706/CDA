@@ -12,8 +12,8 @@ namespace VillageGreen.Data.Models
             HistoriqueTVA = new HashSet<HistoriqueTVA>();
         }
 
-        public int IdTva { get; set; }
-        public int? TauxTva { get; set; }
+        public int IdTVA { get; set; }
+        public int TauxTVA { get; set; }
 
         public virtual ICollection<HistoriqueTVA> HistoriqueTVA { get; set; }
     }

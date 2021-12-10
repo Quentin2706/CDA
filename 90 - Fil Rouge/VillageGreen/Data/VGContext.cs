@@ -292,26 +292,26 @@ namespace VillageGreen.Data
 
             modelBuilder.Entity<HistoriqueTVA>(entity =>
             {
-                entity.HasKey(e => e.IdHistoriqueTva)
+                entity.HasKey(e => e.IdHistoriqueTVA)
                     .HasName("PRIMARY");
 
                 entity.ToTable("historiquetva");
 
                 entity.HasIndex(e => e.IdProduit, "FK_HistoriqueTVA_Produits");
 
-                entity.HasIndex(e => e.IdTva, "FK_HistoriqueTVA_TVA");
+                entity.HasIndex(e => e.IdTVA, "FK_HistoriqueTVA_TVA");
 
-                entity.Property(e => e.IdHistoriqueTva)
+                entity.Property(e => e.IdHistoriqueTVA)
                     .HasColumnType("int(11)")
                     .HasColumnName("IdHistoriqueTVA");
 
-                entity.Property(e => e.DateTva)
+                entity.Property(e => e.DateTVA)
                     .HasColumnType("date")
                     .HasColumnName("dateTVA");
 
                 entity.Property(e => e.IdProduit).HasColumnType("int(11)");
 
-                entity.Property(e => e.IdTva)
+                entity.Property(e => e.IdTVA)
                     .HasColumnType("int(11)")
                     .HasColumnName("IdTVA");
 
@@ -322,7 +322,7 @@ namespace VillageGreen.Data
 
                 entity.HasOne(d => d.TVA)
                     .WithMany(p => p.HistoriqueTVA)
-                    .HasForeignKey(d => d.IdTva)
+                    .HasForeignKey(d => d.IdTVA)
                     .HasConstraintName("FK_HistoriqueTVA_TVA");
             });
 
@@ -548,16 +548,16 @@ namespace VillageGreen.Data
 
             modelBuilder.Entity<TVA>(entity =>
             {
-                entity.HasKey(e => e.IdTva)
+                entity.HasKey(e => e.IdTVA)
                     .HasName("PRIMARY");
 
                 entity.ToTable("tva");
 
-                entity.Property(e => e.IdTva)
+                entity.Property(e => e.IdTVA)
                     .HasColumnType("int(11)")
                     .HasColumnName("IdTVA");
 
-                entity.Property(e => e.TauxTva)
+                entity.Property(e => e.TauxTVA)
                     .HasColumnType("int(11)")
                     .HasColumnName("tauxTVA");
             });
@@ -582,7 +582,7 @@ namespace VillageGreen.Data
 
                 entity.Property(e => e.IdRole).HasColumnType("int(11)");
 
-                entity.Property(e => e.MdpUser)
+                entity.Property(e => e.MDPUser)
                     .IsRequired()
                     .HasMaxLength(50)
                     .HasColumnName("mdpUser");
