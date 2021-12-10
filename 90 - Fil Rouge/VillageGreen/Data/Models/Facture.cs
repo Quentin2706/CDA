@@ -14,6 +14,6 @@ namespace VillageGreen.Data.Models
         public decimal MontantPaiement { get; set; }
 
         public virtual Commande Commande { get; set; }
-        public virtual Reglement IdReglementNavigation { get; set; }
+        public virtual Reglement Reglement { get; set; }
     }
 }

@@ -269,7 +269,7 @@ namespace VillageGreen.Data
                     .HasForeignKey(d => d.IdCommande)
                     .HasConstraintName("FK_Factures_Commandes");
 
-                entity.HasOne(d => d.IdReglementNavigation)
+                entity.HasOne(d => d.Reglement)
                     .WithMany(p => p.Factures)
                     .HasForeignKey(d => d.IdReglement)
                     .HasConstraintName("FK_Factures_Reglements");
@@ -287,7 +287,7 @@ namespace VillageGreen.Data
                 entity.Property(e => e.NomFournisseur)
                     .IsRequired()
                     .HasMaxLength(150)
-                    .HasColumnName("nomFournisseur");
+                    .HasColumnName("NomFournisseur");
             });
 
             modelBuilder.Entity<HistoriqueTVA>(entity =>

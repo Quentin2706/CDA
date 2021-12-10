@@ -8,13 +8,13 @@ namespace VillageGreen.Data.Dtos
 {
     public class FournisseurDTOIn
     {
-        public string nomFournisseur { get; set; }
+        public string NomFournisseur { get; set; }
     }
 
     public class FournisseurDTOOut
     {
         public int IdFournisseur { get; set; }
-        public string nomFournisseur { get; set; }
+        public string NomFournisseur { get; set; }
     }
 
 }

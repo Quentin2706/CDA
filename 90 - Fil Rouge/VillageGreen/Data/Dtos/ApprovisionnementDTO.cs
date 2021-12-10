@@ -9,7 +9,7 @@ namespace VillageGreen.Data.Dtos
     public class ApprovisionnementDTOIn
     {
         public int IdProduit { get; set; }
-        public int? IdFournisseur { get; set; }
+        public int IdFournisseur { get; set; }
         public string RefFournisseur { get; set; }
     }
 
@@ -19,8 +19,8 @@ namespace VillageGreen.Data.Dtos
         public int IdProduit { get; set; }
         public string LibelleProduit { get; set; }
         public string RefProduit { get; set; }
-        public int? IdFournisseur { get; set; }
-        public string nomFournisseur { get; set; }
+        public int IdFournisseur { get; set; }
+        public string NomFournisseur { get; set; }
         public string RefFournisseur { get; set; }
     }
 }

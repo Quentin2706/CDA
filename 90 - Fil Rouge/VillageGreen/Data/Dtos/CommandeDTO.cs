@@ -41,6 +41,7 @@ namespace VillageGreen.Data.Dtos
         public int CoefClient { get; set; }
         public int IdCategorieClient { get; set; }
         public string LibelleCategClient { get; set; }
+        public string InfoReglement { get; set; }
         public int IdAdresse { get; set; }
         public string EmailAdresse { get; set; }
         public string TelMobile { get; set; }
