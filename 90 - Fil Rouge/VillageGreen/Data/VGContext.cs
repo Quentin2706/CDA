@@ -463,7 +463,7 @@ namespace VillageGreen.Data
 
             modelBuilder.Entity<ProgressionCommande>(entity =>
             {
-                entity.HasKey(e => e.IdProgressionsCommande)
+                entity.HasKey(e => e.IdProgressionCommande)
                     .HasName("PRIMARY");
 
                 entity.ToTable("progressionscommande");
@@ -472,7 +472,7 @@ namespace VillageGreen.Data
 
                 entity.HasIndex(e => e.IdCommande, "FK_ProgressionsCommande_commandes");
 
-                entity.Property(e => e.IdProgressionsCommande).HasColumnType("int(11)");
+                entity.Property(e => e.IdProgressionCommande).HasColumnType("int(11)");
 
                 entity.Property(e => e.DateEtatCommande)
                     .HasColumnType("date")

@@ -19,5 +19,6 @@ namespace VillageGreen.Data.Dtos
         public string LibelleVille { get; set; }
         public string CodePostal { get; set; }
         public int IdPays { get; set; }
+        public int NomPays { get; set; }
     }
 }

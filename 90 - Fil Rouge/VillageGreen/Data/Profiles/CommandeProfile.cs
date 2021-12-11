@@ -39,7 +39,7 @@ namespace VillageGreen.Data.Profiles
                 .ForMember(d => d.ComplementAdresse, o => o.MapFrom(s => s.Adresse.ComplementAdresse))
                 .ForMember(d => d.LibelleVille, o => o.MapFrom(s => s.Adresse.Ville.LibelleVille))
                 .ForMember(d => d.CodePostal, o => o.MapFrom(s => s.Adresse.Ville.CodePostal))
-                .ForMember(d => d.CodePostal, o => o.MapFrom(s => s.Adresse.Ville.Pays.NomPays));
+                .ForMember(d => d.NomPays, o => o.MapFrom(s => s.Adresse.Ville.Pays.NomPays));
             CreateMap<CommandeDetailDTOOut, Commande>();
         }
     }

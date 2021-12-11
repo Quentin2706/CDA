@@ -17,6 +17,7 @@ namespace VillageGreen.Data.Dtos
         public int IdRubrique { get; set; }
         public string LibelleRubrique { get; set; }
         public int? IdRubriqueMere { get; set; }
+        public string LibelleRubriqueMere { get; set; }
     }
 
     public class RubriqueDTOOut
