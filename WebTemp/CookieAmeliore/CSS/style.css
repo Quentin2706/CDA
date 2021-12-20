@@ -2,17 +2,18 @@
     --fg-menu-bouton : whitesmoke;
     --bcg-menu-bouton : linear-gradient(#095a8e, #3b96ce);
     --bcg-main-color : whitesmoke;
+    --bcg-semainecookieheader : linear-gradient(rgb(30, 87, 153) 0%, rgb(41, 137, 216) 50%, rgb(32, 124, 202) 51%, rgb(125, 185, 232) 100%);
 }
 
 
 /****  GENERAL ****/
 
-* {
+body, html {
     margin: 0;
     padding: 0;
 }
 
-div, a, header, footer, nav, article, section, body, html {
+div, a, header, footer, nav, article, section, body, html, details, form {
     display: flex;
     flex: 1;
 }
@@ -39,6 +40,9 @@ body {
 .VH1 {
     height: 1vh;
 }
+.VH10 {
+    height: 10vh;
+}
 
 header {
     background-image: url("../IMG/header.jpg");
@@ -49,14 +53,60 @@ header {
 .flex-10 {
     flex: 10;
 }
+
+.flex-30 {
+    flex: 30;
+}
 .flex-0-1 {
     flex: 0.1;
 }
+
+.flex-0-5 {
+    flex: 0.5;
+}
+
 .flex-2 {
     flex: 2;
 }
+.flex-5 {
+    flex: 5;
+}
 
-nav {
+.flex-3 {
+    flex: 3;
+}
+
+.flex-15 {
+    flex: 15;
+}
+
+.pad0-5em {
+    padding: 0.5em;
+}
+
+.pad1em {
+    padding: 1em;
+}
+
+.mg0-1em {
+    margin : 0.1em
+}
+
+.menu-hamburger {
+    display: none;
+}
+
+ .menu-hamburger-logo:hover + .menu-hamburger, .menu-hamburger:hover {
+    display: block;
+    position: absolute;
+    height: 100vh;
+    top : -1px;
+    width: 100%;
+}
+
+
+
+nav, .fake-nav-tel {
     background-image: url("../IMG/fond1.png");
     background-size: cover;
     background-position: center ; 
@@ -64,7 +114,6 @@ nav {
     top: 0;
     padding: 0.1em 0;
 }
-
 
 /* NAV */
 .boutons {
@@ -110,4 +159,83 @@ nav {
 main{
     padding: 1em;
     background-color: var(--bcg-main-color);
+}
+
+.videoCookie {
+    border-radius: 0.2em;
+}
+
+.semaineCookieHeader {
+    background: var(--bcg-semainecookieheader);
+}
+
+.semaineCookieBox {
+    overflow-y: scroll;
+}
+
+.recette > cite {
+    padding: 1em;
+}
+
+.partie1 {
+    height: 40vh;
+}
+
+.semaineCookieHeader h1 {
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding: 0.2em;
+}
+
+article div,  article aside{
+    text-align: justify;
+}
+
+article aside {
+    border-radius: 0.5em;
+    border : 1px solid blue;
+    height: min-content;
+    padding: 0.2em;
+}
+
+footer {
+    background-image: url(../IMG/fond1.png);
+    background-size: cover;
+    background-position-y: 10% ; 
+}
+
+footer > div {
+    font-size: 2em;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:756px) {
+    .telcol {
+        flex-direction: column;
+    }
+
+    .videoCookie {
+        display: none;
+    }
+
+    .nav-pc {
+        display: none;
+    }
+
+    .nav-tel {
+        display: flex;
+    }
+
+    .boutons:hover + .sousmenu, .sousmenu:hover {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
 }
