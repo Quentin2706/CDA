@@ -1,0 +1,96 @@
+:root {
+    --bcg-nav : #abaeff;
+    --border-nav-boutons-nav : white;
+    --color-text : black;
+}
+
+/****  GENERAL ****/
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+div, a, header, footer, nav, article, section, main {
+    display: flex;
+    flex: 1;
+}
+
+img, video {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Taille des flexs */
+.flex-3 {
+    flex: 3;
+}
+.flex-10 {
+    flex: 10;
+}
+
+/* Header */
+
+header {
+    padding: 1em;
+}
+
+/* Nav */
+nav {
+    background-color: var(--bcg-nav);
+}
+
+nav > div.boutons-nav {
+    padding: 0.5em;
+    font-size: 1.5em;
+    border: 1px solid var(--border-nav-boutons-nav);
+    position: relative;
+}
+
+nav > div.boutons-nav:last-child {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+.absolute {
+    position: absolute;
+}
+
+
+/*** Sousmenu ***/
+.sousmenu > div {
+    padding: 0.5em;
+    border: 1px solid var(--border-nav-boutons-nav);
+}
+
+ .sousmenu {
+    display: none;
+    margin-left: 5%;
+} 
+
+
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+footer a:hover{
+    font-size: 1.25em;
+    text-decoration: underline;
+}
+
