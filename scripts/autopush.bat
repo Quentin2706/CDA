@@ -1,5 +1,4 @@
-U:
-cd 59011-07-01
+cd ..
 git pull
 git add . 
 git commit -m "%date% %time%"
