@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Exercice JS</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/cleaning-company-logo-template-design-8c23d7356af57fbea8c5584a499b94d7_screen.jpg?ts=1611090256"
+                alt="Logo de l'entreprise">
+        </div>
+        <div class="flex-10 center">
+            <h1>Eco'logic</h1>
+        </div>
+        <div></div>
+    </header>
+    <div>
+        <nav class="colonne">
+            <div class="boutons"><i class="fas fa-arrow-right"></i>Notre histoire</div>
+            <div class="sousmenu colonne hide">
+                <div>sousmenu1</div>
+                <div>sousmenu2</div>
+                <div>sousmenu3</div>
+                <div>sousmenu4</div>
+            </div>
+            <div class="boutons"><i class="fas fa-arrow-right"></i>En savoir plus ...</div>
+            <div class="sousmenu colonne hide">
+                <div>sousmenu1</div>
+                <div>sousmenu2</div>
+            </div>
+            <div class="boutons"><i class="fas fa-arrow-right"></i>Contact</div>
+            <div class="sousmenu colonne hide">
+                <div>sousmenu1</div>
+            </div>
+            <div class="boutons">Se connecter</div>
+            <div class="boutons">S'inscrire</div>
+        </nav>
+        <main class="flex-3">
+            <div class="flex-0-5"></div>
+            <div class="flex-3">
+                <form action="#">
+                    <div class="grid-form-connexion">
+                        <label id="labIdentifiant" class="jstfCtntRight algnItemCntr">Email :</label>
+                        <div></div>
+                        <input id="inputIdentifiant" class="acheck" type="text" pattern="^[[:alpha:]]([\.\-_]?[[:alnum:]])+@[[:alpha:]]([\.\-_]?[[:alnum:]])*\.[[:alpha:]]{2,4}$">
+                        <label id="labMdp" class="jstfCtntRight algnItemCntr">Mot de passe :</label>
+                        <div></div>
+                        <input id="inputMdp" type="text" class="acheck mdp" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).{8,}$">
+                        <label class="jstfCtntRight algnItemCntr">Confirmation mot de passe :</label>
+                        <div></div>
+                        <input type="text" class="mdp">
+                        <div></div>
+                        <div></div>
+                        <div>
+                            <div></div>
+                            <button>Envoyer</button>
+                            <div></div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                        <fieldset id="liste">
+                            <legend>Liste des vérifications pour que le mot de passe soit valide.</legend>
+                            <div class="colonne">
+                                <div id="maj">
+                                    <i class="fas fa-times-circle flex-0-4"></i>
+                                    <div class="flex-10">Une majuscule</div>
+                                </div>
+                                <div id="min">
+                                     <i class="fas fa-times-circle flex-0-4"></i>
+                                    <div class="flex-10">Une minuscule</div>
+                                </div>
+                                <div>
+                                     <i class="fas fa-check-circle flex-0-4"></i>
+                                     <i class="fas fa-times-circle flex-0-4"></i>
+                                    <div class="flex-10">Un caratère spécial - Ex : ?;/:!§,+-*/</div>
+                                </div>
+                                <div>
+                                    <i class="fas fa-check-circle flex-0-4"></i>
+                                    <i class="fas fa-times-circle flex-0-4"></i>
+                                   <div class="flex-10">Un caractère alphanumérique</div>
+                               </div>
+                                <div>
+                                     <i class="fas fa-check-circle flex-0-4"></i>
+                                     <i class="fas fa-times-circle flex-0-4"></i>
+                                    <div class="flex-10">Plus de 8 caractères</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </form>
+            </div>
+            <div class="flex-0-5"></div>
+        </main>
+        <div></div>
+    </div>
+    <footer>
+        <div>
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/cleaning-company-logo-template-design-8c23d7356af57fbea8c5584a499b94d7_screen.jpg?ts=1611090256"
+                alt="Logo de l'entreprise">
+        </div>
+        <div class="flex-10 center colonne">
+            <a href="#">Mentions légales</a>
+            <a href="#">Contactez nous</a>
+            <a href="#">S'inscrire</a>
+            <a href="#">Se connecter</a>
+        </div>
+        <div>
+            <img id="ascenseur"
+                src="https://media.istockphoto.com/vectors/elevator-sign-black-isolated-symbol-for-elevator-simple-design-vector-id1006906946?k=20&m=1006906946&s=612x612&w=0&h=DX41j1KPeVjHtsrZA1_bpBa7vio036VjDzrQC4RwjKE="
+                alt="Préparez vous au décollage, la fusée atteindra l'ISS dans 9 heures 48 minutes et 26 secondes. Décollage dans 10 9 8 7 6 5 4 3 2 1 0, FEU ! ">
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

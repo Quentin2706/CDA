@@ -1,0 +1,181 @@
+:root {
+    --bgc1: #f5deb3;
+    --bgc2: tan;
+    --font: #074e4e;
+}
+
+/****  GENERAL ****/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div,
+a,
+header,
+footer,
+nav,
+article,
+section, i {
+    display: flex;
+    flex: 1;
+}
+
+img,
+video {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    flex: 4;
+}
+.menu{
+    height: min-content;
+}
+
+nav {
+    background-color: var(--bgc1);
+    user-select: none;
+}
+
+.titreNav,
+.menuItem, .menuTel {
+    font-size: 2em;
+    color: var(--font);
+    background-color: var(--bgc1);
+    padding: .8em;
+}
+
+.titreNav {
+    font-size: 1em;
+    display: none;
+}
+
+.menuTel {
+    display: none;
+}
+
+.flex-10 {
+    flex : 10;
+}
+
+.sousMenu {
+    display: none;
+    background-color: var(--bgc2);
+    transition: 1s;
+    /* pour éviter que le site descend */
+    position: absolute;
+    top:5.5em;
+}
+
+.sousMenuItem {
+    font-size: 1.5em;
+    color: var(--font);
+    padding: .8em;
+    justify-content: center;
+}
+
+.menuItemActive {
+    color: var(--bgc1);
+    background-color: var(--font);
+    transition: background-color 1s ;
+}
+
+.sousMenuItemActive {
+    border: 2px solid var(--font);
+}
+
+.decalage{
+    flex: 0;
+    background-color: #fff;
+}
+
+.menuNavTel {
+    flex-direction: row;
+}
+
+@keyframes secousse {
+    0% { transform: rotate(0deg); }
+    5% { transform: rotate(-10deg); }
+    10% { transform: rotate(-20deg); }
+    15% { transform: rotate(-30deg); }
+    20% { transform: rotate(-40deg); }
+    25% { transform: rotate(-50deg); }
+    30% { transform: rotate(-40deg); }
+    35% { transform: rotate(-30deg); }
+    40% { transform: rotate(-20deg); }
+    45% { transform: rotate(-10deg); }
+    50% { transform: rotate(0deg); }
+    55% { transform: rotate(10deg); }
+    60% { transform: rotate(20deg); }
+    65% { transform: rotate(30deg); }
+    70% { transform: rotate(40deg); }
+    75% { transform: rotate(50deg); }
+    80% { transform: rotate(40deg); }
+    85% { transform: rotate(30deg); }
+    90% { transform: rotate(20deg); }
+    95% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.shake {
+    animation: secousse 0.3s ;
+    animation-iteration-count: 2;
+}
+
+
+.wtf {
+    background-color: yellow;
+    position: absolute;
+    top : 0;
+    width: 100%;
+    font-size: 10em;
+}
+
+
+
+
+
+
+@media screen and  (max-width: 768px){
+
+    nav {
+        flex-direction: column; 
+    }
+
+    .menuTel {
+        display: flex;
+    }
+    nav .menu {
+        display: none;
+    }
+
+    .menuNavTel {
+        flex-direction: column;
+        position: absolute;
+        width: 100vw;
+        margin-top: 5.531em;
+    }
+
+    .titreNav {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sousMenu {
+        position: static;
+    }
+}

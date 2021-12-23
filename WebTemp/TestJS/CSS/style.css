@@ -2,6 +2,7 @@
     --bcg-nav : #abaeff;
     --border-nav-boutons : white;
     --color-text : black;
+    --Police : Helvetica, Arial, sans-serif;
 }
 
 /****  GENERAL ****/
@@ -9,9 +10,10 @@
 html,body {
     margin: 0;
     padding: 0;
+    font-family: var(--Police)
 }
 
-div, a, header, footer, nav, article, section, main {
+div, a, header, footer, nav, article, section, main, input, label, i, fieldset {
     display: flex;
     flex: 1;
 }
@@ -29,12 +31,57 @@ img, video {
     align-items: center;
 }
 
+.jstfCtntCenter {
+    justify-content: center;
+}
+
+.jstfCtntRight {
+    justify-content: end;
+}
+
+.algnItemCntr {
+    align-items: center;
+}
+
 /* Taille des flexs */
 .flex-3 {
     flex: 3;
 }
 .flex-10 {
     flex: 10;
+}
+.flex-5 {
+    flex: 5;
+}
+
+.flex-0-1 {
+    flex: 0.1;
+}
+
+.flex-0-5 {
+    flex: 0.5;
+}
+
+.flex-0-4 {
+    flex: 0.4;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+
+.VH1 {
+    height: 1vh;
+}
+
+
+.VH5 {
+    height: 5vh;
+}
+
+form input {
+    padding: 0.5em;
 }
 
 /* Header */
@@ -48,7 +95,7 @@ nav div {
     user-select: none;
 }
 
-nav > div.boutons {
+nav > .boutons {
     padding: 0.5em;
     font-size: 1.5em;
     border: 1px solid var(--border-nav-boutons);
@@ -70,6 +117,11 @@ nav {
     height: min-content;
 }
 
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
 /*** Sousmenu ***/
 .sousmenu > div {
     padding: 0.5em;
@@ -80,7 +132,6 @@ nav {
  .sousmenu {
     margin-left: 5%;
 }
-
 
 .hide {
     display: none;
@@ -114,4 +165,42 @@ main {
 
 nav i {
     margin-right: 0.2em;
+}
+
+form {
+    width: 100%;
+}
+
+.fa-check-circle {
+    color: rgb(28, 196, 28);
+}
+
+.fa-times-circle {
+    color: red;
+}
+
+
+/* GRID FORM */
+
+.grid-form-connexion {
+    display: grid;
+    grid-template-rows: 4;
+    grid-template-columns: 1fr 0.1em 2.5fr;
+    grid-gap: 0.5em;
+    grid-auto-flow: row;
+}
+
+.grid-form-connexion > label {
+    white-space: nowrap;
+}
+
+form button {
+    padding: 0.5em;
+}
+
+@media screen and (max-width :576px)
+{
+    nav  .boutons{
+        display: none;
+    }
 }
