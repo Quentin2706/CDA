@@ -73,6 +73,7 @@ img, video {
 
 .VH1 {
     height: 1vh;
+    flex: none;
 }
 
 

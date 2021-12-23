@@ -1,0 +1,125 @@
+/****  GENERAL ****/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+div, a, header, footer, nav, article, section, form, input, i, fieldset {
+    display: flex;
+    flex: 1;
+}
+
+img, video {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.centerV {
+    align-items: center;
+}
+
+
+.grid-form-horizontal {
+    display: grid;
+    grid-template-columns: 1fr 0.1em 2.5fr;
+    grid-gap: 0.5em;
+    grid-auto-flow: row;
+}
+
+
+.grid-form-horizontal  label {
+    white-space: nowrap;
+}
+/* .grid-form-horizontal > div {
+    border: 1px solid black;
+} */
+
+.grid-form-horizontal input,.grid-form-horizontal .fakeInput {
+    padding: 0.5em;
+}
+
+
+form button {
+    padding: 0.5em;
+}
+
+.right {
+    justify-content: right;
+}
+
+
+.fauxFormSymbole {
+    color: red;
+}
+
+.vraiFormSymbole {
+    color: #00b400;
+}
+
+.VH3 {
+    height: 3vh;
+    flex: none;
+}
+
+.inputRouge {
+    border: 2px solid #b60000;
+    border-radius: 0.2em;
+    background-color: #ff7e7e;
+}
+
+
+.inputVert {
+    border: 2px solid green;
+    border-radius: 0.2em;
+    background-color: #91ff91;
+}
+
+
+
+/* Taille des flexs */
+.flex-3 {
+    flex: 3;
+}
+.flex-10 {
+    flex: 10;
+}
+.flex-5 {
+    flex: 5;
+}
+
+.flex-0-1 {
+    flex: 0.1;
+}
+
+.flex-0-5 {
+    flex: 0.5;
+}
+
+.flex-0-4 {
+    flex: 0.4;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+
+@media screen and (max-width :576px)
+{
+    .noneTel {
+        flex : 0.1;
+    }
+
+    .grid-form-horizontal input,.grid-form-horizontal .fakeInput {
+        padding: 1em;
+    }
+}
