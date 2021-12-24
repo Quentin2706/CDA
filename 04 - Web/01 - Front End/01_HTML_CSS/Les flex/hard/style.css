@@ -1,0 +1,115 @@
+/****  GENERAL ****/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div, a, footer, nav, article, section, main, header {
+    display: flex;
+    flex: 1;
+}
+
+img, video {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-5 {
+    flex:  5;
+}
+.flex-15 {
+    flex: 15;
+}
+
+.flex-10 {
+    flex: 10;
+}
+
+.rouge {
+    background-color: red;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-100
+{
+    flex: 100;
+}
+.flex-20
+{
+    flex: 20;
+}
+.flex-30
+{
+    flex: 30;
+}
+
+.titre {
+    font-size: 3em;
+}
+
+.VH5 {
+    height: 5vh;
+}
+
+.VH10 {
+    height: 10vh;
+}
+
+.VH20 {
+    height: 20vh;
+}
+
+.VH30 {
+    height: 30vh;
+}
+
+
+.VH70 {
+    height: 70vh;
+}
+
+.bcg-body {
+    background-color: #5B9BD5;
+}
+
+.bcg-header{
+    background-color: #ED7D31;
+    border: 2px solid #AE5A21;
+}
+
+.gris {
+    background-color: #A5A5A5;
+    border: 2px solid #787878;
+}
+
+.jaune {
+    background-color: #FFC000;
+    border: 2px solid #BC8C00;
+}
+
+footer {
+    background-color: #70AD47;
+    border: 1px solid #507E32;
+}
+
+.violet {
+    background-color: #4472C4;
+    border: 1px solid #2F528F; 
+}
+
+.vert {
+    background-color: #ABCF9A;
+    border: 1px solid #70AD47; 
+}
