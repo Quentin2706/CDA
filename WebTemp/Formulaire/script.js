@@ -18,42 +18,17 @@ for (let i = 0; i < lesInputs.length; i++) {
 var boutonValider = document.querySelector("button[type=submit]");
 
 
-console.log(valide);
-
-function check(input) {
-    if (input.value != "") {
-        if (input.checkValidity()) {
-            input.classList.remove("inputRouge");
-            input.classList.add("inputVert");
-            valide[input.name] = true;
-        } else {
-            input.classList.remove("inputVert");
-            input.classList.add("inputRouge");
-            valide[input.name] = false;
-        }
-    } else {
-        input.classList.remove("inputRouge");
-        input.classList.remove("inputVert");
-    }
-    console.log(valide);
-    checkForm();
-}
-
-function checkForm() {
-    boutonValider.disabled = false;
-    // Object.values(valide) : transforme l'objet en tableau
-    //.indexOf(false) : cherche la position de false dans le tableau
-    // si Object.values(valide).indexOf(false) est different de -1, ca veut dire qu'il a trouvé un false dans le tableau
-    // donc l'un des input ne respecte pas la regex
-    if (Object.values(valide).indexOf(false) != -1) {
-        boutonValider.disabled = true;
-    }
-}
 
 /* VERIFICATION SPECIALE POUR LE MDP ET LA CONFIRMATION MDP */
 
 var listeErreur = document.getElementById("liste");
-var inputMdp = document.getElementById("mdp");
+var divMDP = document.getElementById("divMDP");
+var inputMdp = divMDP.querySelector("#mdp");
+var oeil = document.querySelectorAll(".fa-eye");
+
+oeil.forEach(unOeil => {
+    unOeil.addEventListener("click", ShowMDP);
+});
 
 inputMdp.addEventListener("input", AideVerificationMdp);
 
@@ -65,8 +40,6 @@ var inputConfirmMdp = document.querySelector("input[name=confirmMdp]");
 inputConfirmMdp.addEventListener("input", function() {
     checkConfirmMdp(inputConfirmMdp);
 });
-
-
 
 
 for (let i = 0; i < regex.length; i++) {
@@ -95,7 +68,7 @@ function AideVerificationMdp(e) {
             document.querySelector(`${idVerif[i]} i`).classList.add("fa-times-circle");
         }
     }
-    check(e.target);
+    check(inputMdp);
     checkConfirmMdp(document.querySelector("input[name=confirmMdp]"));
 }
 
@@ -116,6 +89,51 @@ function checkConfirmMdp(input)
         input.classList.remove("inputVert");
         input.classList.remove("inputRouge");
     }
+    }
+    checkForm();
+}
+
+function ShowMDP(e)
+{
+    // si on veut afficher le mdp // PAR DEFAUT IL EST CACHE
+    if (e.target.classList.contains("far"))
+    {
+        e.target.classList.remove("far");
+        e.target.classList.add("fas");
+        e.target.previousElementSibling.type = "text";
+    } else {// si on veut cacher le mdp
+        e.target.classList.remove("fas");
+        e.target.classList.add("far");
+        e.target.previousElementSibling.type = "password";
+    }
+}
+
+function checkForm() {
+    boutonValider.disabled = false;
+    // Object.values(valide) : transforme l'objet en tableau
+    //.indexOf(false) : cherche la position de false dans le tableau
+    // si Object.values(valide).indexOf(false) est different de -1, ca veut dire qu'il a trouvé un false dans le tableau
+    // donc l'un des input ne respecte pas la regex
+    if (Object.values(valide).indexOf(false) != -1) {
+        boutonValider.disabled = true;
+    }
+}
+
+
+function check(input) {
+    if (input.value != "") {
+        if (input.checkValidity()) {
+            input.classList.remove("inputRouge");
+            input.classList.add("inputVert");
+            valide[input.name] = true;
+        } else {
+            input.classList.remove("inputVert");
+            input.classList.add("inputRouge");
+            valide[input.name] = false;
+        }
+    } else {
+        input.classList.remove("inputRouge");
+        input.classList.remove("inputVert");
     }
     checkForm();
 }

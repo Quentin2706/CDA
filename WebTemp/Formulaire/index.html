@@ -69,13 +69,12 @@
 
                             <div class="right centerV"><label for="mdp">Mot de passe :</label></div>
                             <div></div> <!-- Espace -->
-                            <div><input id="mdp" required name="mdp" type="password" placeholder="Ex-emple98/" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).{8,}$"></div>
+                            <div class="relative" id="divMDP"><input id="mdp" required name="mdp" type="password" placeholder="Ex-emple98/" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).{8,}$"><i class="far fa-eye"></i></div>
 
                             <div class="right centerV"><label for="confirmMdp">Confirmation de mot de passe :</label>
                             </div>
                             <div></div> <!-- Espace -->
-                            <div><input required name="confirmMdp" type="password"
-                                    placeholder="Ex-emple98/"></div>
+                            <div class="relative" id="divConfirmMDP"><input required name="confirmMdp" type="password"placeholder="Ex-emple98/"><i class="far fa-eye"></i></div>
                                     <!-- ligne vide pour espacer le bouton -->
                             <div></div>   
                             <div></div>                                  
@@ -104,7 +103,7 @@
                         </div>
                         <div id="special">
                              <i class="fas fa-times-circle flex-0-4 fauxFormSymbole"></i>
-                            <div class="flex-10">Un caratère spécial - Ex : ?;/:!§,+-*\</div>
+                            <div class="flex-10">Un caractère spécial - Ex : ?;/:!§,+-*\</div>
                         </div>
                         <div id="num">
                             <i class="fas fa-times-circle flex-0-4 fauxFormSymbole"></i>

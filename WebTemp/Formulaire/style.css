@@ -83,6 +83,16 @@ form button {
     background-color: #91ff91;
 }
 
+#divMDP > i, #divConfirmMDP > i {
+    position: absolute;
+    right: 0.75em;
+    top : 0.5em
+}
+
+.relative {
+    position: relative;
+}
+
 
 
 /* Taille des flexs */
@@ -121,5 +131,11 @@ form button {
 
     .grid-form-horizontal input,.grid-form-horizontal .fakeInput {
         padding: 1em;
+    }
+
+    #divMDP > i {
+        position: absolute;
+        right: 1em;
+        top : 1em
     }
 }
