@@ -265,3 +265,21 @@ ALTER TABLE HistoriqueTVA
  ADD CONSTRAINT FK_HistoriqueTVA_Produits FOREIGN KEY(IdProduit) REFERENCES Produits(IdProduit),
  ADD CONSTRAINT FK_HistoriqueTVA_TVA FOREIGN KEY(IdTVA) REFERENCES TVA(IdTVA);
 
+
+
+
+
+CREATE VIEW produitsrubriquesview AS SELECT
+    `IdProduit`,
+    `libelleProduit`,
+    `description`,
+    `refProduit`,
+    `prixHorsTaxe`,
+    `photo`,
+    `stock`,
+    produits.`IdRubrique`,
+    `libelleRubrique`,
+    `IdRubriqueMere`
+FROM
+    `produits`
+INNER JOIN rubriques ON rubriques.IdRubrique = produits.IdProduit
