@@ -25,9 +25,8 @@ img, video {
 
 #grid{
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
     grid-gap: 0.5em;
-    grid-auto-rows: minmax(1em, auto);
+    grid-auto-rows: minmax(3.5em, auto);
     padding: 0.5em;
     border: 3px solid black;
 }
