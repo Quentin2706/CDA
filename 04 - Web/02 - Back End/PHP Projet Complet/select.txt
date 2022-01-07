@@ -1,0 +1,28 @@
+Pour le select on besoin de traiter tous les cas possible.
+
+
+SELECT * FROM table;
+SELECT nomdecolonne1, nomdecolonne2 FROM table
+SELECT * FROM table WHERE nomcol = param1 AND nomcol = param2;
+SELECT *  FROM table INNER JOIN table1 ON table1.nomcol = table2.nomcol
+
+
+SELECT [Tableau de colonnes] FROM nomTable WHERE [[table1,FK,Table2, LEFT JOIN OU RIGHT JOIN etc .. ],[table2,FK,Table3, LEFT JOIN OU RIGHT JOIN etc .. ]] ["val1 = val2","val > val6"] GROUP BY nomcol
+
+
+
+
+paramètres : 
+$colonnes => tableaux de colonnes sur lesquels faire la requête // tableaux
+$jointures => Un tableau qui contient des tableaux a 4 valeurs => [NomTable,?FK,?Table2,?Jointure] // tableaux
+Le tableau de jointure sera obligatoire pour avoir au moins le nom de la colonne sur laquelle on travaille.
+Ex : [[NomTable]];
+
+$conditions => contient des conditions sous forme de string // string
+
+$groupBy => 1ere nomcolonne
+
+select($colonnes,$jointures,$conditions,$groupBy,$ordreBy,$limit);
+
+
+
