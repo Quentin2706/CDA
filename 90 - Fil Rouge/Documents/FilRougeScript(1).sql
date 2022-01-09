@@ -267,8 +267,6 @@ ALTER TABLE HistoriqueTVA
 
 
 
-
-
 CREATE VIEW produitsrubriquesview AS SELECT
     `IdProduit`,
     `libelleProduit`,
@@ -283,3 +281,24 @@ CREATE VIEW produitsrubriquesview AS SELECT
 FROM
     `produits`
 INNER JOIN rubriques ON rubriques.IdRubrique = produits.IdProduit
+
+
+
+CREATE VIEW produitsfournisseursview AS SELECT
+   SELECT
+    fournisseurs.IdFournisseur,
+    `nomFournisseur`,
+    Approvisionnements.IdApprovisionnement,
+    Approvisionnements.IdProduit,
+    `refFournisseur`,
+    `libelleProduit`,
+    `description`,
+    `refProduit`,
+    `prixHorsTaxe`,
+    `photo`,
+    `stock`,
+    `IdRubrique`
+FROM
+    `produits`
+   INNER JOIN Approvisionnements ON Approvisionnements.IdProduit = Produits.IdProduit
+INNER JOIN fournisseurs ON Approvisionnements.IdFournisseur = fournisseurs.IdFournisseur;

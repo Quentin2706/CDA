@@ -18,48 +18,17 @@ class ProduitsManager
 
     public static function findById($id)
     {
-        $db = DbConnect::getDb();
-        $id = (int) $id;  // on verifie que id est numerique, evite l'injection SQL
-        $q = $db->query("SELECT * FROM Produits WHERE idProduit=" . $id);
-        $results = $q->fetch(PDO::FETCH_ASSOC);
-        if ($results != false)
-        {
-            return new Produits($results);
-        }
-        else
-        {
-            return false;
-        }
+        return Services::select(Produits::getAttributes(),"Produits",false, ["IdProduit" => $id]);
     }
 
     public static function getList()
     {   
-        $db = DbConnect::getDb();
-        $liste = [];
-        $q = $db->query("SELECT * FROM Produits");
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
-        {
-            if ($donnees != false)
-            {
-                $liste[] = new Produits($donnees);
-            }
-        }
-        return $liste;  // tableau contenant les objets Produits
+        return Services::select(Produits::getAttributes(),"Produits");
     }
 
     public static function getListByCategorie($idCategorie)
     {
-        $idCategorie=(int) $idCategorie;
-        $db = DbConnect::getDb();
-        $liste = [];
-        $q = $db->query("SELECT * FROM Produits where idCategorie=$idCategorie");
-        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
-        {
-            if ($donnees != false)
-            {
-                $liste[] = new Produits($donnees);
-            }
-        }
-        return $liste;  // tableau contenant les objets Produits
+        return Services::select(Produits::getAttributes(),"Produits",false, ["IdCategorie" => $idCategorie]);
+        
     }
 }

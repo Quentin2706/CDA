@@ -174,6 +174,12 @@ class Employes
         return 0;
     }
 
+
+    function masseSalariale()
+    {
+        return $this->prime()+$this->getSalaire();
+    }
+
     public function chequeVacances()
     {
         if ($this->anciennete() >= 1)

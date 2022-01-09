@@ -1,7 +1,5 @@
 <?php
 $liste = CategoriesManager::getList();
-
-
 ?>
 <div class="demiPage colonne">
     <div id="crudBarreOutil">

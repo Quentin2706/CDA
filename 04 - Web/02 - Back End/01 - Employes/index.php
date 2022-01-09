@@ -42,16 +42,14 @@ foreach ($emp as $elt) {
 }
 
 usort($emp, array("Employes","compareToServices"));
-
+$montant = 0;
 foreach ($emp as $elt) {
     echo "<div>" . $elt->getNom() . " " . $elt->getPrenom() ." ".$elt->getService(). "</div>";
+    $montant += $elt->MasseSalariale();
 }
 
-$montant = 0;
 
-foreach ($emp as $elt) {
-   $montant += $elt->getSalaire();
-}
+
 
 echo"<div>Montant de la masse salariale totale : ".$montant."</div>";
 

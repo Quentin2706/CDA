@@ -14,7 +14,7 @@ switch ($mode) {
 echo '<h5>' . $mode . ' un nouveau produit</h5></div>
 <form id="formulaire" method="post" action="index.php?page=actionProduit&mode=' . $mode . '">';
 if (isset($_GET['id'])) {
-    $prod = ProduitsManager::findById($_GET['id']);
+    $prod = ProduitsManager::findById($_GET['id'])[0];
     $idCateg = $prod->getIdCategorie();
 } else {
     $prod = new Produits();

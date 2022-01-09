@@ -1,6 +1,5 @@
 <?php
 
-
 class CategoriesManager 
 {
 	public static function add(Categories $obj)
@@ -16,23 +15,12 @@ class CategoriesManager
 	{
 		return Services::delete($obj);
 	}
-	public static function findById($id)
+	public static function findById(int $id)
 	{
- 		$db=DbConnect::getDb();
-		$id = (int) $id;
-		$q=$db->query("SELECT * FROM Categories WHERE idCategorie =".$id);
-		$results = $q->fetch(PDO::FETCH_ASSOC);
-		if($results != false)
-		{
-			return new Categories($results);
-		}
-		else
-		{
-			return false;
-		}
+		return Services::select(Categories::getAttributes(),"Categories",false, ["idCategorie" => $id]);
 	}
 	public static function getList()
 	{
- 		//return Services::select();
+ 		return Services::select(Categories::getAttributes(),"Categories");
 	}
 }
