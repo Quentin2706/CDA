@@ -1,23 +1,8 @@
-/****  GENERAL ****/
-html, body {
-	margin : 0;
-	padding : 0;
-}
-
-div, header, footer, nav, article {
-	display : flex;
-	flex : 1;
-}
-
-img, video {
-	width : 100%;
-}
-
-.colonne {
-	flex-direction : column;
+header {
+    background-color: var(--header-bcg);
+    padding: 0.5em;
 }
 
 .titre {
-	flex: 5;
+    flex : 1;
 }
-
