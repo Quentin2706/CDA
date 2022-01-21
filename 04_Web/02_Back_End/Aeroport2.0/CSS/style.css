@@ -1,0 +1,91 @@
+:root {
+    --color: #ecc4ff;
+    --inputCorrect: #04724d;
+    --inputIncorrect: #e94f37;
+    --inputVide: #ffffff4d;
+    --bgc1:#9ee0a9;
+    --bgc2:#9ee0e0;
+    --linkColor : #000000;
+    --btn-connect-header-bcg : #00c24adf;
+    --btn-connect-header-color : #ffffffff;
+    --btn-connect-header-border: 1px solid #ffffffff;
+    --btn-connect-header-borderRadius : 0.5em;
+    --nav-bcg : #00c24adf;
+    --nav-color : #ffffffff;
+}
+
+/* HEADER */
+header {
+    padding: 0.5em;
+}
+
+.titre {
+    flex:10;
+}
+
+#btn-connect-header {
+    padding: 0.5em;
+    margin: 0.5em 0;
+    background-color: var(--btn-connect-header-bcg);
+    border :  var(--btn-connect-header-border);
+    border-radius : var(--btn-connect-header-borderRadius) ;
+}
+#btn-connect-header button {
+    color : var(--btn-connect-header-color);
+    background-color: unset;
+    border: unset;
+}
+
+/* NAV */
+nav div {
+    background-color: var(--nav-bcg);
+    padding: 0.5em;
+}
+
+nav a, nav div {
+    color : var(--nav-color);
+}
+
+.gridListe, .gridForm {
+    margin-top: 1em;
+}
+
+
+
+/* .align-top {
+    align-items: flex-start;
+}
+
+.align-bot {
+    align-items: flex-end;
+} */
+
+
+@media screen and (max-width: 1200px) {
+    .titre {
+        flex:7;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .titre {
+        flex:5;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .titre {
+        flex:3;
+        font-size: 0.9em;
+    }
+    .col-700px {
+        flex-direction: column;
+    }
+}
+
+/* @media screen and (max-width: 600px) {
+    .titre {
+        flex:1;
+    }
+} */
