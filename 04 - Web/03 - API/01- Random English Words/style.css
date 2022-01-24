@@ -1,0 +1,19 @@
+div {
+    display: flex;
+    flex: 1;
+}
+
+
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.1em;
+}
+
+img {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
