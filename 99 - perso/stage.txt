@@ -1,0 +1,20 @@
+========== Questions ==========
+	= Perso = 
+Les horaires ?
+On peut utiliser discord ou pas ? 
+
+	= Appli Facture =
+Quelles sont les fonctionalités de facture.net a ajouter en plus ?
+L'application sera t-elle utilisée qu'en France ou a l'international ?
+Faut t-il plusieurs modes de paiements pour une seule facture ?
+
+
+========= Réponses ============
+On va utiliser Symfony pour le site de facture
+nextJS pour le site vitrine 
+
+ChartJS => open source pour les graphiques 
+
+Import Excel pour gérer les factures automatiquement (dans le cas où c'est virement/chèques ...)
+
+
