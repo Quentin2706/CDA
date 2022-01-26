@@ -49,3 +49,13 @@ U:\59011-07-01\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept
 U:\59011-07-01\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ref\ApiVillesDept.dll
 U:\59011-07-01\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.pdb
 U:\59011-07-01\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.genruntimeconfig.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.csproj.AssemblyReference.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.GeneratedMSBuildEditorConfig.editorconfig
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.AssemblyInfoInputs.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.AssemblyInfo.cs
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.csproj.CoreCompileInputs.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.MvcApplicationPartsAssemblyInfo.cs
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.MvcApplicationPartsAssemblyInfo.cache
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.dll
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ref\ApiVillesDept.dll
+E:\Developpement_Web\CDAQuentin\03 - CSharp\05 - API\ApiVillesDept\obj\Debug\net5.0\ApiVillesDept.pdb

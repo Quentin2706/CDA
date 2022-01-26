@@ -1,0 +1,51 @@
+[
+    {
+        "idProduit": "3",
+        "libelleProduit": "crayondddsffff",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    },
+    {
+        "idProduit": "4",
+        "libelleProduit": "crayonddddddss",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    },
+    {
+        "idProduit": "5",
+        "libelleProduit": "crayondddsss",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    },
+    {
+        "idProduit": "6",
+        "libelleProduit": "crayonddd",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    },
+    {
+        "idProduit": "7",
+        "libelleProduit": "crayonddddddsdsfsfedfze",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    },
+    {
+        "idProduit": "8",
+        "libelleProduit": "crayonddd",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    },
+    {
+        "idProduit": "9",
+        "libelleProduit": "crayonddd",
+        "prix": "3",
+        "dateDePeremption": "2020-11-27",
+        "idCategorie": "2"
+    }
+]
