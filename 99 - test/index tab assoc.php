@@ -16,6 +16,16 @@ $tabFK[] = ["TABLE_NAME" => "affectations", "COLUMNS_NAME" => "idVol"];
 $tabFK[] = ["TABLE_NAME" => "affectations", "COLUMNS_NAME" => "idVol"];
 
 
-var_dump(array_column($tabFK, "COLUMNS_NAME"));
-var_dump(array_search("zzzz", array_column($tabFK, "COLUMNS_NAME")));
+// var_dump(array_column($tabFK, "COLUMNS_NAME"));
+// var_dump(array_search("zzzz", array_column($tabFK, "COLUMNS_NAME")));
 // var_dump($tabFK[]);
+
+
+$table = ["Toto", "zdaezaé", "zeaeazea", "TiTi", "zdaeazdsq"];
+foreach($table as $uneTable)
+{
+    $nvTable[] = strtolower($uneTable);
+}
+var_dump(array_search("titi",$nvTable,true));
+
+// passer les tables en minuscule pour faire un check et récuperer la case version (sensitive)

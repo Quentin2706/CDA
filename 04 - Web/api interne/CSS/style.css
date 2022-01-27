@@ -1,5 +1,0 @@
-#donnees {
-    display : grid;
-	border : 0.5px solid black;
-	grid-template-columns : 1fr 1fr 1fr 1fr;
-}
