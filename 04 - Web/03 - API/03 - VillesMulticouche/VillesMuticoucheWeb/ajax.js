@@ -61,7 +61,7 @@ const requ2 = new XMLHttpRequest();
 
 /**** Delete  */
 // requ.open('DELETE', 'https://localhost:44398/api/Departements/16', true);
-// requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 // requ.send();
 
 /**** Delete  */

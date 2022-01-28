@@ -52,7 +52,7 @@ namespace VillesMultiCouche
                 options.AddPolicy(name: "ADMIN",
                                     builder =>
                                     {
-                                        builder.WithOrigins("http://nomdedomaine1", "http://nomDeDomaine2")
+                                        builder.WithOrigins("http://nomdedomaine1")
                                         .WithMethods("PUT", "DELETE", "POST", "GET")
                                         .WithHeaders("content-type");
                                     });
