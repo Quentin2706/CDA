@@ -1,0 +1,90 @@
+/* HEADER */
+header div, .titreListe {
+    font-size: 1.3em;
+}
+
+header a {
+    font-size: 0.9em;
+}
+
+header div {
+    color : var(--color1);
+}
+
+.titre, .titreListe {
+    color : var(--color1);
+    flex : 5;
+    font-weight: 600;
+}
+
+/* GENERAL CSS */ 
+.nocenter {
+    justify-content: unset;
+    align-items: unset;
+}
+
+main {
+    margin-top: 1em;
+}
+.padding-0-5 {
+    padding: 0.5em;
+}
+
+.padding-2 {
+    padding: 2em;
+}
+
+body {
+    background-color: var(--color4);
+}
+
+footer, header {
+    background-color: var(--color5);
+}
+
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#ghostFooter {
+    visibility: hidden;
+}
+
+footer, #ghostFooter {
+    margin-top: 1em;
+}
+
+
+footer > div > div, #ghostFooter > div > div {
+    font-weight: 700;
+    color : var(--color1);
+}
+footer > div > a, #ghostFooter > div > a {
+    font-size: 0.8em;
+}
+
+/* NAV */
+nav .boutons {
+    box-shadow: 2px 2px 3px black;
+}
+
+/* titre liste*/
+.titreListe {
+    color: black;
+}
+
+
+/* Ligne article liste*/
+.ligneArticleListe {
+    justify-content: space-between;
+    margin-top: .5em;
+}
+
+.blocTypeArticle {
+    margin: 1em 0;
+}
+
